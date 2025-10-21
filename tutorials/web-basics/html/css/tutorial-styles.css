@@ -1,0 +1,110 @@
+/* Code block styles */
+pre[class*="language-"] {
+    position: relative;
+    padding-top: 2.5em;
+    margin: 1em 0;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    background: #2d2d2d;
+}
+
+/* Handle when language-* is on the code element */
+pre > code[class*="language-"] {
+    display: block;
+    background: #2d2d2d;
+    padding: 1em;
+    border-radius: 0.375rem;
+}
+
+pre[class*="language-"] code,
+pre > code[class*="language-"] {
+    font-family: "Fira Code", "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    tab-size: 4;
+}
+
+/* Run button styles */
+.run-code-btn {
+    z-index: 10;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.run-code-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Console output styles */
+.console-output {
+    background-color: #f8f9fa;
+    border-left: 4px solid #6c757d;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.25rem;
+}
+
+.console-log-entry {
+    font-family: "Fira Code", "Consolas", "Monaco", monospace;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    word-break: break-word;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.console-log-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Additional tutorial styles */
+.tutorial-content {
+    padding: 1.5rem 0;
+}
+
+.tutorial-content h2 {
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+.code-block {
+    margin: 1.5rem 0;
+}
+
+.code-block pre {
+    margin: 0;
+    border-radius: 0.375rem;
+}
+
+.alert {
+    border-left: 4px solid transparent;
+}
+
+.alert-info {
+    border-left-color: #0dcaf0;
+}
+
+.alert-warning {
+    border-left-color: #ffc107;
+}
+
+.alert-danger {
+    border-left-color: #dc3545;
+}
+
+.alert-success {
+    border-left-color: #198754;
+}

@@ -1,0 +1,997 @@
+/* ============================================
+   FSMASTER.IN - CUSTOM STYLES
+   - CSS Variables for theme support
+   - Dark/Light mode colors
+   - Component-specific styles
+   - Responsive utilities
+============================================ */
+
+/* ============================================
+   CSS VARIABLES FOR THEMING
+   - Bootstrap's data-bs-theme handles most colors
+   - Custom variables for specific components
+============================================ */
+:root {
+    /* Light mode custom colors - Beautiful gradient background */
+    --hero-gradient-start: #08495e;
+    --hero-gradient-mid-1: #86f0ec;
+    --hero-gradient-mid-2: #2d8ded;
+    --hero-gradient-end: #9d2ded;
+    
+    /* Vibrant accent colors for text, headings, buttons */
+    --accent-pink: #fa1ed2;
+    --accent-pink-light: #f28ab4;
+    --accent-red: #d9071c;
+    
+    /* Additional light mode colors */
+    --code-bg: #f8f9fa;
+    --sidebar-bg: #ffffff;
+    --sidebar-border: #e0e0e0;
+    --code-block-header-bg: #e9ecef;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --card-hover-shadow: 0 10px 25px rgba(250, 30, 210, 0.3);
+}
+
+[data-bs-theme="dark"] {
+    /* Dark mode custom colors - Black background */
+    --hero-gradient-start: #000000;
+    --hero-gradient-mid-1: #0a0a0a;
+    --hero-gradient-mid-2: #1a1a1a;
+    --hero-gradient-end: #000000;
+    
+    /* Same vibrant accent colors for consistency */
+    --accent-pink: #fa1ed2;
+    --accent-pink-light: #f28ab4;
+    --accent-red: #d9071c;
+    
+    /* Additional dark mode colors */
+    --code-bg: #0d0d0d;
+    --sidebar-bg: #0a0a0a;
+    --sidebar-border: #333333;
+    --code-block-header-bg: #1a1a1a;
+    --card-shadow: 0 4px 6px rgba(250, 30, 210, 0.2);
+    --card-hover-shadow: 0 10px 25px rgba(250, 30, 210, 0.4);
+}
+
+/* ============================================
+   THEME TOGGLE ICON VISIBILITY
+   - Show/hide appropriate icon based on theme
+============================================ */
+[data-bs-theme="light"] .theme-icon-light {
+    display: none;
+}
+
+[data-bs-theme="dark"] .theme-icon-dark {
+    display: none;
+}
+
+/* Smooth transition when switching themes */
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   LINKS & ANCHORS
+   - Vibrant pink color for links
+============================================ */
+a {
+    color: var(--accent-pink);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-red);
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: var(--accent-pink);
+}
+
+.breadcrumb-item a {
+    color: var(--accent-pink);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--accent-red);
+}
+
+/* ============================================
+   HERO SECTION
+   - Beautiful multi-color gradient background
+   - Responsive min-height
+   - Floating animation for text
+============================================ */
+.hero-section {
+    background: linear-gradient(135deg, 
+        var(--hero-gradient-start) 0%, 
+        var(--hero-gradient-mid-1) 25%, 
+        var(--hero-gradient-mid-2) 50%, 
+        var(--hero-gradient-end) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 15s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(-10%, -10%) scale(1.1);
+    }
+}
+
+.hero-section h1,
+.hero-section p {
+    color: white;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section h1 {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-section p {
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.hero-section .btn {
+    animation: fadeInUp 1.2s ease-out 0.4s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.min-vh-50 {
+    min-height: 50vh;
+}
+
+/* ============================================
+   CARD HOVER EFFECTS
+   - Smooth lift animation with vibrant gradient border
+============================================ */
+.card {
+    box-shadow: var(--card-shadow);
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.hover-lift {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.hover-lift::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-pink-light), var(--accent-red));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--card-hover-shadow) !important;
+}
+
+.hover-lift:hover::before {
+    opacity: 1;
+}
+
+/* ============================================
+   NAVIGATION ENHANCEMENTS
+   - Multilevel dropdown positioning
+   - Smooth dropdown transitions
+   - Vibrant brand colors
+============================================ */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-brand i {
+    color: var(--accent-pink);
+    -webkit-text-fill-color: var(--accent-pink);
+}
+
+/* Navbar link base styles with 3D effect */
+.navbar.navbar-expand-lg .navbar-nav .nav-link {
+    transition: all 0.3s cubic-bezier(.2,.8,.2,1);
+    font-weight: 500;
+    color: white !important;
+    opacity: 1;
+    padding: 0.5rem 1.2rem;
+    position: relative;
+    margin: 0 0.5rem;
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-pink));
+    border-radius: 8px;
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.1),
+        0 4px 8px -2px rgba(217, 7, 28, 0.2);
+    transform: translateY(0);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+/* 3D hover effect */
+.navbar.navbar-expand-lg .navbar-nav .nav-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 8px rgba(0,0,0,0.15),
+        0 8px 16px -4px rgba(250, 30, 210, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Active button state */
+.navbar.navbar-expand-lg .navbar-nav .nav-link:active,
+.navbar.navbar-expand-lg .navbar-nav .nav-link.active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 1px 2px rgba(0,0,0,0.1),
+        0 2px 4px -1px rgba(217, 7, 28, 0.15);
+    filter: brightness(0.95);
+}
+
+/* Add subtle top highlight for 3D effect */
+.navbar.navbar-expand-lg .navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, 
+        rgba(255,255,255,0.2), 
+        rgba(255,255,255,0));
+    border-radius: 8px 8px 0 0;
+    pointer-events: none;
+}
+
+/* Theme toggle specific styles */
+.navbar.navbar-expand-lg .nav-item.ms-lg-3 {
+    margin-left: auto !important;
+}
+
+/* Style the theme toggle button with 3D effect */
+#themeToggle {
+    transition: all 0.3s cubic-bezier(.2,.8,.2,1);
+    padding: 0.5rem 1rem;
+    border: none;
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-pink));
+    border-radius: 8px;
+    color: white;
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.1),
+        0 4px 8px -2px rgba(217, 7, 28, 0.2);
+    transform: translateY(0);
+    position: relative;
+    overflow: hidden;
+}
+
+#themeToggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, 
+        rgba(255,255,255,0.2), 
+        rgba(255,255,255,0));
+    border-radius: 8px 8px 0 0;
+    pointer-events: none;
+}
+
+#themeToggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 8px rgba(0,0,0,0.15),
+        0 8px 16px -4px rgba(250, 30, 210, 0.4);
+    filter: brightness(1.1);
+}
+
+#themeToggle:active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 1px 2px rgba(0,0,0,0.1),
+        0 2px 4px -1px rgba(217, 7, 28, 0.15);
+    filter: brightness(0.95);
+}
+
+/* Ensure icons inside theme toggle are properly visible */
+#themeToggle i {
+    font-size: 1.1rem;
+    vertical-align: middle;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+}
+
+/* Center the main menubar (Home, Tutorials, Interview, About, Contact) */
+/* Keep mobile collapse behavior; center on medium+ screens */
+@media (min-width: 768px) {
+    .navbar-collapse {
+        display: flex !important;
+        justify-content: center; /* center the collapsed nav container */
+    }
+
+    /* the UL sometimes uses ms-auto to push items right; reset on desktop */
+    .navbar-nav.ms-auto {
+        margin-left: 0 !important;
+    }
+
+    .navbar-nav {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    /* push the theme-toggle (list item with ms-lg-3) to the far right while keeping menu centered */
+    .navbar-nav .nav-item.ms-lg-3 {
+        margin-left: auto !important;
+    }
+}
+
+/* Dropdown styling */
+.dropdown-item {
+    transition: all 0.2s ease;
+    position: relative;
+    padding: 0.75rem 1rem;
+}
+
+.dropdown-item.dropdown-toggle {
+    padding-right: 2rem;
+}
+
+/* Remove default blue background and add subtle gradient */
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-item.dropdown-toggle.active {
+   background: linear-gradient(135deg,
+        rgba(3, 250, 225, 0.203),
+        rgba(110, 154, 230, 0.152));
+    color: var(--accent-pink) !important;
+}
+
+/* Hover effect */
+.dropdown-item:hover {
+    background: linear-gradient(135deg,
+        rgba(3, 250, 225, 0.203),
+        rgba(110, 154, 230, 0.152));
+    transform: translateX(5px);
+}
+
+/* Desktop: Show dropend menus to the right */
+@media (min-width: 992px) {
+    .dropdown-menu-lg {
+        min-width: 280px;
+        border: none;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 
+            0 4px 6px rgba(0,0,0,0.05),
+            0 10px 15px rgba(250, 30, 210, 0.1);
+        border-radius: 12px;
+        padding: 0.5rem;
+    }
+    
+    .dropend .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-left: 0.125rem;
+    }
+    
+    /* Show dropdown on hover (desktop only) */
+    .nav-item.dropdown:hover > .dropdown-menu,
+    .dropend:hover > .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.2s ease;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dropdown item with icon spacing */
+.dropdown-item {
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(135deg, rgba(250, 30, 210, 0.1), rgba(217, 7, 28, 0.1));
+    color: var(--accent-pink);
+    transform: translateX(5px);
+}
+
+.dropdown-item i {
+    margin-right: 8px;
+    width: 16px;
+    display: inline-block;
+    color: var(--accent-pink);
+}
+
+/* ============================================
+   SIDEBAR NAVIGATION (Tutorial Pages)
+   - Fixed sidebar on desktop
+   - Scrollable content
+   - Active link highlighting
+============================================ */
+/* Sidebar styles */
+.sidebar-nav {
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    min-height: calc(100vh - 70px);
+    overflow-y: auto;
+    max-width: 250px; /* Limit maximum width */
+    flex: 0 0 16.666667%; /* col-lg-2 equivalent */
+    padding-right: 0;
+}
+
+/* Adjust main content when sidebar is present */
+.sidebar-nav + .col-lg-9 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1200px) {
+    .sidebar-nav {
+        flex: 0 0 16.666667%;
+        max-width: 250px;
+    }
+    
+    .sidebar-nav + .col-lg-9 {
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
+    }
+}
+
+.sidebar-content {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.sidebar-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--bs-body-color);
+}
+
+.sidebar-subtitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--bs-secondary);
+}
+
+/* Sidebar navigation links */
+.sidebar-nav .nav-link {
+    color: var(--bs-body-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    margin-bottom: 0.25rem;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.sidebar-nav .nav-link:hover {
+    background: linear-gradient(135deg, rgba(250, 30, 210, 0.1), rgba(217, 7, 28, 0.1));
+    color: var(--accent-pink);
+    transform: translateX(5px);
+}
+
+.sidebar-nav .nav-link.active {
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-red));
+    color: #ffffff !important;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(250, 30, 210, 0.3);
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+    background: var(--sidebar-border);
+    border-radius: 3px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+    background: var(--bs-secondary);
+}
+
+/* ============================================
+   TUTORIAL CONTENT AREA
+   - Proper spacing and typography
+   - Code block styling
+============================================ */
+.tutorial-content {
+    max-width: 900px;
+}
+
+.tutorial-content article {
+    line-height: 1.8;
+}
+
+.tutorial-content h1 {
+    margin-bottom: 1.5rem;
+}
+
+.tutorial-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--bs-border-color);
+}
+
+.tutorial-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.tutorial-content p {
+    margin-bottom: 1rem;
+}
+
+.tutorial-content code:not([class*="language-"]) {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+}
+
+/* ============================================
+   CODE BLOCK STYLING
+   - Custom header for code blocks with accent colors
+   - Syntax highlighting support
+============================================ */
+.code-block-wrapper {
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(250, 30, 210, 0.2);
+    box-shadow: 0 2px 8px rgba(250, 30, 210, 0.1);
+}
+
+.code-block-header {
+    background: linear-gradient(135deg, rgba(250, 30, 210, 0.05), rgba(217, 7, 28, 0.05));
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(250, 30, 210, 0.2);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent-pink);
+}
+
+.code-language {
+    color: var(--accent-pink);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.code-block-wrapper pre {
+    margin: 0;
+    background-color: var(--code-bg);
+}
+
+.code-block-wrapper code {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Inline code styling */
+code:not([class*="language-"]) {
+    background: linear-gradient(135deg, rgba(250, 30, 210, 0.1), rgba(242, 138, 180, 0.1));
+    color: var(--accent-pink);
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* Prism.js theme adjustments for dark mode */
+[data-bs-theme="dark"] pre[class*="language-"] {
+    background: #1e1e1e;
+}
+
+[data-bs-theme="dark"] code[class*="language-"] {
+    background: #1e1e1e;
+}
+
+/* ============================================
+   CODE RUNNER COMPONENT
+   - Textarea styling for code input
+   - Output iframe styling
+   - Tab styling
+============================================ */
+.code-input {
+    width: 100%;
+    min-height: 250px;
+    padding: 1rem;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    border: none;
+    background-color: var(--code-bg);
+    color: var(--bs-body-color);
+    resize: vertical;
+    outline: none;
+}
+
+.code-input:focus {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: -2px;
+}
+
+.code-output-frame {
+    width: 100%;
+    min-height: 300px;
+    border: none;
+    background-color: white;
+}
+
+/* Code runner tabs */
+.code-runner .nav-tabs {
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.code-runner .nav-tabs .nav-link {
+    color: var(--bs-body-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.code-runner .nav-tabs .nav-link:hover {
+    border: none;
+    background-color: var(--bs-secondary-bg);
+}
+
+.code-runner .nav-tabs .nav-link.active {
+    border: none;
+    background-color: var(--code-bg);
+    color: var(--bs-primary);
+    font-weight: 500;
+}
+
+/* ============================================
+   BREADCRUMB STYLING
+   - Consistent spacing
+============================================ */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ============================================
+   ALERT STYLING
+   - Enhanced icons with vibrant colors
+============================================ */
+.alert {
+    border-radius: 12px;
+    border: none;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, rgba(250, 30, 210, 0.1), rgba(242, 138, 180, 0.1));
+    color: var(--bs-body-color);
+    border-left: 4px solid var(--accent-pink);
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, rgba(217, 7, 28, 0.1), rgba(250, 30, 210, 0.1));
+    color: var(--bs-body-color);
+    border-left: 4px solid var(--accent-red);
+}
+
+.alert i {
+    font-size: 1.1rem;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+    color: var(--accent-pink);
+}
+
+/* ============================================
+   BUTTONS & CTAs
+   - Vibrant gradient buttons with animations
+============================================ */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-red));
+    border: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: white !important;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(250, 30, 210, 0.4);
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-pink));
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--accent-pink);
+    color: var(--accent-pink);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-red));
+    border-color: transparent;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(250, 30, 210, 0.3);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-success:hover,
+.btn-outline-info:hover,
+.btn-outline-warning:hover,
+.btn-outline-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   HEADINGS & TEXT COLORS
+   - Vibrant pink and red accent colors
+============================================ */
+h1, h2, h3, h4, h5, h6 {
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* Keep solid color for specific headings */
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-section h4,
+.hero-section h5,
+.hero-section h6 {
+    background: none;
+    -webkit-text-fill-color: white;
+    color: white;
+}
+
+.card-title {
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================
+   ICON ENHANCEMENTS
+   - Animated icons with vibrant colors
+============================================ */
+.card-body i {
+    transition: all 0.3s ease;
+}
+
+.card:hover i {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.text-primary i {
+    color: var(--accent-pink) !important;
+}
+
+.text-success i {
+    color: var(--accent-pink-light) !important;
+}
+
+.text-danger i,
+.text-warning i,
+.text-info i {
+    color: var(--accent-red) !important;
+}
+
+/* ============================================
+   FOOTER STYLING
+   - Subtle shadow
+   - Social icon animations
+============================================ */
+footer {
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+    background: var(--bs-body-bg);
+}
+
+footer a {
+    color: var(--bs-body-color);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+footer a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+footer a i {
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   - Mobile-specific adjustments
+============================================ */
+@media (max-width: 991.98px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tutorial-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .code-input {
+        font-size: 0.85rem;
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .code-input {
+        min-height: 180px;
+    }
+    
+    .code-output-frame {
+        min-height: 250px;
+    }
+}
+
+/* ============================================
+   LOADING ANIMATION (for future use)
+============================================ */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* ============================================
+   UTILITY CLASSES
+============================================ */
+.text-gradient {
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, 
+        var(--hero-gradient-start) 0%, 
+        var(--hero-gradient-mid-1) 25%, 
+        var(--hero-gradient-mid-2) 50%, 
+        var(--hero-gradient-end) 100%) !important;
+}
+
+/* Color utility classes */
+.text-accent-pink {
+    color: var(--accent-pink) !important;
+}
+
+.text-accent-red {
+    color: var(--accent-red) !important;
+}
+
+.border-accent {
+    border-color: var(--accent-pink) !important;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .sidebar-nav,
+    footer,
+    .code-runner,
+    .breadcrumb {
+        display: none;
+    }
+    
+    .tutorial-content {
+        max-width: 100%;
+    }
+}

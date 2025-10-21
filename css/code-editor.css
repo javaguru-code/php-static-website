@@ -1,0 +1,134 @@
+/* Code Editor Styles */
+.code-editor {
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+    background-color: var(--bs-body-bg);
+}
+
+.editor-toolbar {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--bs-border-color);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.editor-toolbar .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.theme-select {
+    width: auto !important;
+    margin-left: auto;
+}
+
+.code-input {
+    width: 100%;
+    min-height: 200px;
+    border: none;
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    resize: vertical;
+}
+
+.output-container {
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.output-frame {
+    width: 100%;
+    min-height: 200px;
+    border: none;
+    background-color: var(--bs-body-bg);
+}
+
+/* CodeMirror Custom Styles */
+.CodeMirror {
+    height: auto !important;
+    min-height: 200px;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cm-s-monokai.CodeMirror {
+    background-color: #272822;
+}
+
+/* Dark Theme */
+.code-editor.dark-theme {
+    background-color: #272822;
+    border-color: #373832;
+}
+
+.code-editor.dark-theme .editor-toolbar {
+    border-color: #373832;
+    background-color: #1e1f1c;
+}
+
+/* Syntax Highlighting */
+.token.comment {
+    color: #75715e;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+    color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+    color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+    color: #e6db74;
+}
+
+.token.keyword {
+    color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+    color: #fd971f;
+}
+
+/* Example Output Styles */
+.example-output {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.375rem;
+    background-color: var(--bs-body-bg);
+}
