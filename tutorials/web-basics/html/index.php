@@ -15,22 +15,7 @@ include_file('includes/header.php');
 include_file('tutorials/web-basics/html/sidebar.php');
 ?>
 
-<div class="offcanvas offcanvas-start d-lg-none" id="tutorialSidebar" tabindex="-1">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title"><i class="bi bi-globe"></i> HTML Tutorial</h5>
-        <button class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
-    </div>
-    <div class="offcanvas-body">
-        <nav class="nav flex-column">
-            <a class="nav-link active" data-bs-dismiss="offcanvas" href="#introduction">Introduction</a>
-            <a class="nav-link" data-bs-dismiss="offcanvas" href="#what-is-html">What is HTML?</a>
-            <a class="nav-link" data-bs-dismiss="offcanvas" href="#html-example">HTML Example</a>
-            <a class="nav-link" data-bs-dismiss="offcanvas" href="#why-learn-html">Why Learn HTML?</a>
-            <a class="nav-link" data-bs-dismiss="offcanvas" href="#how-html-works">How HTML Works</a>
-            <a class="nav-link" data-bs-dismiss="offcanvas" href="#getting-started">Getting Started</a>
-        </nav>
-    </div>
-</div>
+
 
 <main class="col-12 col-lg-9 pt-3 px-lg-4">
     <div class="d-lg-none mb-3">
