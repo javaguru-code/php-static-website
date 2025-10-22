@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <style>
+    body { font-family: Poppins, Arial, sans-serif; line-height: 1.65; padding: 1rem; }
+    pre { background:#f6f8fa; padding:.75rem; overflow:auto; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+<body onload="load()">
+
+<!-- ixheader -->
+<div class="header-container">
+<div class="bookwrapper clearfix">
+<div id="brandProdName">
+<div id="logocover"></div>
+<div id="productName">Documentation</div>
+</div>
+<br class="clearfloat"/>
+</div>
+</div>
+<div id="TopBar">
+<div id="TopBar_tr"> <div id="TopBar_tl"> <div id="TopBar_br"> <div id="TopBar_bl">
+<div id="TopBar_left">
+                        The Java™ Tutorials
+                    </div>
+<div id="TopBar_right">
+<form id="searchForm" onsubmit="return search()"><input name="category" type="hidden" value="java"/><input name="product" type="hidden" value="e25407-01"/><input id="keywordreal" name="q" type="hidden" value=""/><label for="searchField"><input id="searchField" onclick="this.value='';" size="30" type="text"/></label><input type="submit" value="Search"/></form>
+<a href="javascript:toggleLeft()" id="ToggleLeft">Hide TOC</a>
+</div>
+</div> </div> </div> </div> </div>
+<div class="LeftBar_shown" id="LeftBar">
+<div id="Contents">
+<div class="nolinkLESSON">The "Hello World!" Application</div>
+<div class="linkAHEAD"><a data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html" href="#">"Hello World!" for the NetBeans IDE</a></div>
+<div class="linkAHEAD"><a data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html" href="#">"Hello World!" for Microsoft Windows</a></div>
+<div class="linkAHEAD"><a data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html" href="#">"Hello World!" for Solaris OS, Linux, and Mac OS X</a></div>
+</div>
+</div>
+<div class="MainFlow_indented" id="MainFlow">
+<div class="PrintHeaders">
+<b>Trail:</b> Getting Started
+        </div>
+<div id="BreadCrumbs">
+<a data-origin-href="https://docs.oracle.com/javase/tutorial/index.html" href="#" target="_top">Home Page</a>
+        &gt;
+            <a data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/index.html" href="#" target="_top">Getting Started</a>
+</div>
+<div class="NavBit">
+<a data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/intro/index.html" href="#" target="_top">« Previous</a> • <a data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/TOC.html" href="#" target="_top">Trail</a> • <a data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html" href="#" target="_top">Next »</a>
+</div>
+<div class="Banner"><p style="background-color: rgb(247, 248, 249); border-width: 1px; padding: 10px; font-style: italic; border-style: solid; border-color: rgb(64, 74, 91);">The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.<br/>See <a data-origin-href="https://dev.java/learn/" href="#">Dev.java</a> for updated tutorials taking advantage of the latest releases.<br/>See <a data-origin-href="https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&amp;id=java_language_changes" href="#">Java Language Changes</a> for a summary of updated language features in Java SE 9 and subsequent releases.<br/>See <a data-origin-href="https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html" href="#">JDK Release Notes</a> for information about new features, enhancements, and removed or deprecated options for all JDK releases.</p></div>
+<div id="PageTitle"><h1>Lesson: The "Hello World!" Application</h1></div>
+<div id="PageContent">
+<p>The sections listed below provide detailed instructions for compiling and running a simple "Hello World!" application. The first section provides information on getting started with the NetBeans IDE, an integrated development environment that greatly simplifies the software development process. The NetBeans IDE runs on all of the platforms listed below. The remaining sections provide platform-specific instructions for getting started without an integrated development environment. If you run into problems, be sure to consult the common problems section; it provides solutions for many issues encountered by new users.</p>
+<p>
+<a class="TutorialLink" data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html" href="#" target="_top">"Hello World!" for the NetBeans IDE</a> These instructions are for users of the NetBeans IDE. The NetBeans IDE runs on the Java platform, which means that you can use it with any operating system for which there is a JDK 7 available. These operating systems include Microsoft Windows, Solaris OS, Linux, and Mac OS X. We recommend using the NetBeans IDE instead of the command line whenever possible.</p>
+<p>
+<a class="TutorialLink" data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html" href="#" target="_top">"Hello World!" for Microsoft Windows</a> These command-line instructions are for users of Windows XP Professional, Windows XP Home, Windows Server 2003, Windows 2000 Professional, and Windows Vista.</p>
+<p>
+<a class="TutorialLink" data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html" href="#" target="_top">"Hello World!" for Solaris OS, Linux, and Mac OS X</a> These command-line instructions are for users of Solaris OS, Linux, and Mac OS X. 
+<a class="TutorialLink" data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html" href="#" target="_top">Common Problems (and Their Solutions)</a> Consult this page if you have problems compiling or running your application.</p>
+</div>
+<div class="NavBit">
+<a data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/intro/index.html" href="#">« Previous</a>
+        •
+        <a data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/TOC.html" href="#">Trail</a>
+        •
+        <a data-origin-href="https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html" href="#">Next »</a>
+</div>
+</div>
+<hr class="clearfloat"/>
+<div id="Footer">
+<p class="footertext">
+<a data-origin-href="https://www.oracle.com/corporate/" href="#">About Oracle</a> | 
+<a data-origin-href="https://www.oracle.com/corporate/contact/" href="#">Contact Us</a> |
+<a data-origin-href="https://www.oracle.com/legal/" href="#">Legal Notices</a> | 
+<a data-origin-href="https://www.oracle.com/legal/terms.html" href="#">Terms of Use</a> |
+<a data-origin-href="https://www.oracle.com/legal/privacy/" href="#">Your Privacy Rights</a></p>
+<p class="footertext"><a data-origin-href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en-US" href="#">
+Copyright © 1995, 2024 Oracle and/or its affiliates. All rights reserved.</a></p>
+</div>
+<div class="PrintHeaders">
+<b>Previous page:</b> Previous Lesson
+        <br/><b>Next page:</b> "Hello World!" for the NetBeans IDE
+    </div>
+<!-- Start SiteCatalyst code -->
+
+<!-- End SiteCatalyst code -->
+</body>
+</body>
+</html>

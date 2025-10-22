@@ -910,6 +910,43 @@ footer a i {
         font-size: 0.85rem;
         min-height: 200px;
     }
+
+    /* Improve navbar usability on mobile */
+    .navbar.navbar-expand-lg .navbar-nav .nav-link {
+        background: transparent;
+        color: var(--bs-body-color) !important;
+        margin: 0;
+        border-radius: 0;
+        padding: 0.75rem 0.5rem;
+    }
+    .navbar .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+        margin-top: 0.25rem;
+        border: none;
+        box-shadow: none;
+        background: var(--bs-body-bg);
+    }
+    /* indent nested submenus */
+    .navbar .dropdown-menu .dropdown-menu {
+        margin-left: 0.75rem;
+        margin-top: 0.25rem;
+    }
+
+    /* Mobile sidebar toggle button */
+    .sidebar-toggle-btn {
+        position: sticky;
+        top: 0.5rem;
+        z-index: 1030; /* above content */
+        margin-bottom: 0.5rem;
+    }
+
+    /* Offcanvas width for sidebar */
+    #sidebarOffcanvas.offcanvas {
+        width: 85%;
+        max-width: 320px;
+    }
 }
 
 @media (max-width: 575.98px) {

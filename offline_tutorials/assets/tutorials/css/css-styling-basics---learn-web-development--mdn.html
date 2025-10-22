@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <style>
+    body { font-family: Poppins, Arial, sans-serif; line-height: 1.65; padding: 1rem; }
+    pre { background:#f6f8fa; padding:.75rem; overflow:auto; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+<main class="reference-layout__content" id="content">
+<div class="reference-layout__header">
+<mdn-survey></mdn-survey>
+<h1>CSS styling basics</h1>
+<section class="content-section">
+<ul class="prev-next"><li class="menu"><a class="button secondary" data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" href="#"><span class="button-wrap"> Overview: Core learning modules</span></a></li><li class="next"><a class="button secondary" data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS" href="#"><span class="button-wrap"> Next  </span></a></li></ul>
+<p>CSS (Cascading Style Sheets) is used to style and layout web pages â for example, to alter the font, color, size, and spacing of your content, split it into multiple columns, or add animations and other decorative features. This module provides all the CSS fundamentals you'll need for now, including syntax, features, and techniques.</p>
+</section>
+</div>
+<aside class="reference-layout__toc">
+<nav class="reference-toc">
+<h2>In this article</h2>
+<ul>
+<li><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps#prerequisites" href="#">Prerequisites</a></li><li><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps#tutorials_and_challenges" href="#">Tutorials and challenges</a></li><li><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps#test_your_skills" href="#">Test your skills</a></li><li><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps#additional_tutorials" href="#">Additional tutorials</a></li><li><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps#see_also" href="#">See also</a></li>
+</ul>
+</nav>
+<mdn-placement-sidebar></mdn-placement-sidebar>
+</aside>
+<div class="reference-layout__body">
+<section aria-labelledby="prerequisites" class="content-section">
+<!--lit-part SW7lC2+zI0c=--><!--lit-node 0--><h2 class="heading" id="prerequisites"><!--lit-node 1--><a class="heading-anchor" data-origin-href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps#prerequisites" href="#">Prerequisites</a></h2><!--/lit-part-->
+<p>Before starting this module, you should have a basic work environment set up (as detailed in <a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Installing_software" href="#">Installing basic software</a>), and understand how to create and manage files (as detailed in <a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Dealing_with_files" href="#">Dealing with files</a>). You should also be familiar with HTML (work through our <a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content" href="#">Structuring content with HTML</a> module if not).</p>
+<div class="notecard note">
+<p><strong>Note:</strong>
+If you are working on a computer, tablet, or another device where you can't create files, you can try running the code in an online editor such as <a class="external" data-origin-href="https://codepen.io/" href="#" target="_blank">CodePen</a> or <a class="external" data-origin-href="https://jsfiddle.net/" href="#" target="_blank">JSFiddle</a>.</p>
+</div>
+</section><section aria-labelledby="tutorials_and_challenges" class="content-section">
+<!--lit-part Y8DB+oRZVfk=--><!--lit-node 0--><h2 class="heading" id="tutorials_and_challenges"><!--lit-node 1--><a class="heading-anchor" data-origin-href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps#tutorials_and_challenges" href="#">Tutorials and challenges</a></h2><!--/lit-part-->
+<dl>
+<dt id="what_is_css"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS" href="#">What is CSS?</a></dt>
+<dd>
+<p>CSS allows you to create great-looking web pages, but how does it work under the hood? This article explains what CSS, what the basic syntax looks like, and how your browser applies CSS to HTML to style it.</p>
+</dd>
+<dt id="getting_started_with_css"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started" href="#">Getting started with CSS</a></dt>
+<dd>
+<p>In this article, we will take a simple HTML document and apply CSS to it, learning some practical details of the language along the way. We will also review the CSS syntax features you've not looked at yet.</p>
+</dd>
+<dt id="styling_a_biography_page"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Styling_a_bio_page" href="#">Styling a biography page</a> <sup>Challenge</sup></dt>
+<dd>
+<p>In this challenge you will style a simple biography page, testing you on some of the skills you learned in the last couple of lessons including writing selectors, coloring backgrounds, and text styling. We will also invite you to look up some basic CSS features that we haven't covered, to test your research skills.</p>
+</dd>
+<dt id="basic_css_selectors"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors" href="#">Basic CSS selectors</a></dt>
+<dd>
+<p>In this article we'll recap some selector fundamentals, including the basic type, class, and ID selectors.</p>
+</dd>
+<dt id="attribute_selectors"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors" href="#">Attribute selectors</a></dt>
+<dd>
+<p>As you know from your study of HTML, elements can have attributes that give further detail about the element being marked up. In CSS you can use attribute selectors to target elements with certain attributes. This lesson will show you how to use these very useful selectors.</p>
+</dd>
+<dt id="pseudo-classes_and_pseudo-elements"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements" href="#">Pseudo-classes and pseudo-elements</a></dt>
+<dd>
+<p>The next set of selectors we will look at are referred to as <strong>pseudo-classes</strong> and <strong>pseudo-elements</strong>. There are a large number of these, and they often serve quite specific purposes. Once you know how to use them, you can look through the different types to see if there is something which works for the task you are trying to achieve.</p>
+</dd>
+<dt id="combinators"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Combinators" href="#">Combinators</a></dt>
+<dd>
+<p>The final selectors we will look at are called combinators. Combinators are used to combine other selectors in a way that allows us to select elements based on their location in the DOM relative to other elements (for example, child or sibling).</p>
+</dd>
+<dt id="the_box_model"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model" href="#">The box model</a></dt>
+<dd>
+<p>Everything in CSS has a box around it, and understanding these boxes is key to being able to create more complex layouts with CSS, or to align items with other items. In this lesson, we will take a look at the CSS <em>Box model</em>. You'll get an understanding of how it works and the terminology that relates to it.</p>
+</dd>
+<dt id="handling_conflicts"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts" href="#">Handling conflicts</a></dt>
+<dd>
+<p>The aim of this lesson is to develop your understanding of some of the most fundamental concepts of CSS â the cascade, specificity, and inheritance â which control how CSS is applied to HTML and how conflicts between style declarations are resolved.</p>
+</dd>
+<dt id="fixing_blog_page_styles"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Fixing_blog_styles" href="#">Fixing blog page styles</a> <sup>Challenge</sup></dt>
+<dd>
+<p>In this challenge we give you a basic blog page example that is partially styled. We need you to fix some problems with the existing CSS and add some styles to finish it off. Along the way we will test your knowledge of selectors, the box model, and conflicts/cascade.</p>
+</dd>
+<dt id="values_and_units"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units" href="#">Values and units</a></dt>
+<dd>
+<p>CSS rules contain <a data-origin-href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_syntax/Syntax#css_declarations" href="#">declarations</a>, which in turn are composed of properties and values. Each property used in CSS has a <strong>value type</strong> that describes what kind of values it is allowed to have. In this lesson, we will take a look at some of the most frequently used value types, what they are, and how they work.</p>
+</dd>
+<dt id="sizing_items_in_css"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Sizing" href="#">Sizing items in CSS</a></dt>
+<dd>
+<p>Understanding how big the different features in your design will be is important. In this lesson we will summarize the various ways elements get a size via CSS and define a few terms about sizing that will help you in the future.</p>
+</dd>
+<dt id="backgrounds_and_borders"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Backgrounds_and_borders" href="#">Backgrounds and borders</a></dt>
+<dd>
+<p>In this lesson, we will take a look at some of the creative things you can do with CSS backgrounds and borders. From adding gradients, background images, and rounded corners, backgrounds and borders are the answer to a lot of styling questions in CSS.</p>
+</dd>
+<dt id="challenge_sizing_and_decorating_a_content_panel"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Size_decorate_content_panel" href="#">Challenge: Sizing and decorating a content panel</a> <sup>Challenge</sup></dt>
+<dd>
+<p>In this challenge you are provided with a lightly styled page structure that renders a content panel, with a heading at the top and a button bar at the bottom. we want you to follow the instructions to size and decorate it, producing an interesting layout as a result. Along the way, we'll test your knowledge of CSS values and units, sizing, and background and borders.</p>
+</dd>
+<dt id="overflowing_content"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Overflow" href="#">Overflowing content</a></dt>
+<dd>
+<p>Overflow is what happens when there is too much content to fit inside an element box. In this lesson, you will learn how to manage overflow using CSS.</p>
+</dd>
+<dt id="images_media_and_form_elements"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Images_media_forms" href="#">Images, media, and form elements</a></dt>
+<dd>
+<p>In this lesson we will take a look at how certain special elements are treated in CSS. Images, other media, and form elements behave a little differently from regular boxes in terms of your ability to style them with CSS. Understanding what is and isn't possible can save some frustration, and this lesson will highlight some of the main things that you need to know.</p>
+</dd>
+<dt id="styling_tables"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Tables" href="#">Styling tables</a></dt>
+<dd>
+<p>Styling an HTML table isn't the most glamorous job in the world, but sometimes we all have to do it. This article explains how to make HTML tables look good, with some specific table styling techniques highlighted.</p>
+</dd>
+<dt id="debugging_css"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Debugging_CSS" href="#">Debugging CSS</a></dt>
+<dd>
+<p>This article will give you guidance on how to go about debugging a CSS problem, and show you how the DevTools included in all modern browsers can help you to find out what is going on.</p>
+</dd>
+</dl>
+</section><section aria-labelledby="test_your_skills" class="content-section">
+<!--lit-part jymVgekiQls=--><!--lit-node 0--><h2 class="heading" id="test_your_skills"><!--lit-node 1--><a class="heading-anchor" data-origin-href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps#test_your_skills" href="#">Test your skills</a></h2><!--/lit-part-->
+<p>You will find "Test your skills" articles placed between the tutorial articles to check whether you have retained the most important information before you move on. If you want to explore all of these together, you can find them listed at <a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Test_your_skills" href="#">Test your skills: CSS styling basics</a>.</p>
+</section><section aria-labelledby="additional_tutorials" class="content-section">
+<!--lit-part 46iZwSaiuY4=--><!--lit-node 0--><h2 class="heading" id="additional_tutorials"><!--lit-node 1--><a class="heading-anchor" data-origin-href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps#additional_tutorials" href="#">Additional tutorials</a></h2><!--/lit-part-->
+<p>These tutorials are not part of the learning pathway, but they are interesting nonetheless â you should consider these as stretch goals, to optionally study when you are done with the main Core articles.</p>
+<dl>
+<dt id="advanced_styling_effects"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Advanced_styling_effects" href="#">Advanced styling effects</a></dt>
+<dd>
+<p>This article acts as a box of tricks, providing an introduction to some interesting advanced styling features such as box shadows, blend modes, and filters.</p>
+</dd>
+<dt id="cascade_layers"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers" href="#">Cascade layers</a></dt>
+<dd>
+<p>This lesson aims to introduce you to <a data-origin-href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer" href="#">cascade layers</a>, a more advanced feature that builds on the fundamental concepts of the <a data-origin-href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Cascade" href="#">CSS cascade</a> and <a data-origin-href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity" href="#">CSS specificity</a>.</p>
+</dd>
+<dt id="handling_different_text_directions"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_different_text_directions" href="#">Handling different text directions</a></dt>
+<dd>
+<p>In recent years, CSS has evolved in order to better support different directionality of content, including right-to-left but also top-to-bottom content (such as Japanese) â these different directionalities are called writing modes. As you progress in your study and begin to work with layout, an understanding of writing modes will be very helpful to you, therefore we will introduce them in this article.</p>
+</dd>
+<dt id="organizing_css"><a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Organizing" href="#">Organizing CSS</a></dt>
+<dd>
+<p>As you start to work on larger stylesheets and big projects you will discover that maintaining a huge CSS file can be challenging. In this article we will take a brief look at some best practices for writing your CSS to make it easily maintainable, and some of the solutions you will find in use by others to help improve maintainability.</p>
+</dd>
+</dl>
+</section><section aria-labelledby="see_also" class="content-section">
+<!--lit-part p88DAUaBJzA=--><!--lit-node 0--><h2 class="heading" id="see_also"><!--lit-node 1--><a class="heading-anchor" data-origin-href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps#see_also" href="#">See also</a></h2><!--/lit-part-->
+<dl>
+<dt id="learn_html_and_css"><a class="external" data-origin-href="https://scrimba.com/learn-html-and-css-c0p?via=mdn" href="#" target="_blank">Learn HTML and CSS</a>, Scrimba <sup><a data-origin-href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Learning_content#partner_links_and_embeds" href="#"><em>MDN learning partner</em></a></sup></dt>
+<dd>
+<p><a class="external" data-origin-href="https://scrimba.com/?via=mdn" href="#" target="_blank">Scrimba's</a> <em>Learn HTML and CSS</em> course teaches you HTML and CSS through building and deploying five awesome projects, with fun interactive lessons and challenges taught by knowledgeable teachers.</p>
+</dd>
+<dt id="write_your_first_lines_of_css!"><a class="external" data-origin-href="https://scrimba.com/the-frontend-developer-career-path-c0j/~015?via=mdn" href="#" target="_blank">Write your first lines of CSS!</a>, Scrimba <sup><a data-origin-href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Learning_content#partner_links_and_embeds" href="#"><em>MDN learning partner</em></a></sup></dt>
+<dd>
+<p>This interactive lesson provides a useful introduction to CSS syntax.</p>
+</dd>
+</dl>
+<ul class="prev-next"><li class="menu"><a class="button secondary" data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core" href="#"><span class="button-wrap"> Overview: Core learning modules</span></a></li><li class="next"><a class="button secondary" data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/What_is_CSS" href="#"><span class="button-wrap"> Next  </span></a></li></ul>
+</section>
+<section aria-labelledby="feedback" class="content-section article-footer">
+<div class="article-footer__inner">
+<div class="article-footer__svg-container"><!--lit-part +YwD1wS6984=--><svg fill="none" height="162" viewbox="0 0 162 162" width="162" xmlns="http://www.w3.org/2000/svg"><mask fill="#fff" id="b"><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z"></path></mask><path d="M97.203 47.04c8.113-7.886 18.004-13.871 28.906-17.492a78 78 0 0 1 33.969-3.39c11.443 1.39 22.401 5.295 32.024 11.411s17.656 14.28 23.476 23.86c5.819 9.579 9.269 20.318 10.083 31.385a69.85 69.85 0 0 1-5.387 32.44c-4.358 10.272-11.115 19.443-19.747 26.801-8.632 7.359-18.908 12.709-30.034 15.637l-6.17-21.698c7.666-2.017 14.746-5.703 20.694-10.773 5.948-5.071 10.603-11.389 13.606-18.467a48.14 48.14 0 0 0 3.712-22.352c-.561-7.625-2.938-15.025-6.948-21.625s-9.544-12.226-16.175-16.44-14.181-6.904-22.065-7.863a53.75 53.75 0 0 0-23.405 2.336c-7.513 2.495-14.327 6.62-19.918 12.053z" mask="url(#b)" stroke="url(#a)" stroke-dasharray="6, 6" stroke-width="2" style="stroke:url(#a)" transform="translate(-63.992 -25.587)"></path><ellipse cx="8.066" cy="111.597" fill="currentColor" rx="53.677" ry="53.699" transform="matrix(.71707 -.697 .7243 .6895 0 0)"></ellipse><g clip-path="url(#c)" transform="translate(-63.992 -25.587)"><path d="m144.256 137.379 32.906 12.434a4.41 4.41 0 0 1 2.559 5.667l-9.326 24.679a4.41 4.41 0 0 1-5.667 2.559l-8.226-3.108-2.332 6.17c-.466 1.233-.375 1.883-1.609 1.417l-2.253-.527c-.411-.155-.95-.594-1.206-1.161l-4.734-10.484-12.545-4.741a4.41 4.41 0 0 1-2.559-5.667l9.325-24.679a4.41 4.41 0 0 1 5.667-2.559m9.961 29.617 8.227 3.108 3.264-8.638-.498-6.768-4.113-1.555.548 7.258-4.319-1.632zm-12.339-4.663 8.226 3.108 3.264-8.637-.498-6.769-4.113-1.554.548 7.257-4.319-1.632z" fill="#9abff5"></path></g><g clip-path="url(#d)" transform="translate(-63.992 -25.587)"><path d="M135.35 60.136 86.67 41.654c-3.346-1.27-7.124.428-8.394 3.775L64.414 81.938c-1.27 3.347.428 7.125 3.774 8.395l12.17 4.62-3.465 9.128c-.693 1.826-1.432 2.457.394 3.15l3.014 1.625c.609.231 1.637.274 2.477-.104l15.53-6.983 18.56 7.047c3.346 1.27 7.124-.428 8.395-3.775l13.862-36.51c1.27-3.346-.428-7.124-3.775-8.395M95.261 83.207l-12.17-4.62 4.852-12.779 7.19-7.017 6.085 2.31-7.725 7.51 6.389 2.426zm18.255 6.93-12.17-4.62 4.852-12.778 7.189-7.017 6.085 2.31-7.725 7.51 6.39 2.426z" fill="#81b0f3"></path></g><defs><clippath id="c"><path d="m198.638 146.586-65.056-24.583-24.583 65.057 65.056 24.582z" fill="#fff"></path></clippath><clippath id="d"><path d="m66.438 14.055 96.242 36.54-36.54 96.243-96.243-36.54z" fill="#fff"></path></clippath><lineargradient gradientunits="userSpaceOnUse" id="a" x1="97.203" x2="199.995" y1="47.04" y2="152.793"><stop stop-color="#086DFC"></stop><stop offset=".246" stop-color="#2C81FA"></stop><stop offset=".516" stop-color="#5497F8"></stop><stop offset=".821" stop-color="#80B0F6"></stop><stop offset="1" stop-color="#9ABFF5"></stop></lineargradient></defs></svg><!--/lit-part--></div>
+<h2 id="feedback">Help improve MDN</h2>
+<mdn-content-feedback locale="en-US"><template shadowroot="open" shadowrootmode="open"><!--lit-part wnhNI9MhleE=--><fieldset class="content-feedback">
+<!--lit-part abqF9JTZmM8=--><label><!--lit-part-->Was this page helpful to you?<!--/lit-part-->
+</label>
+<div class="content-feedback--buttons">
+<!--lit-node 3--><mdn-button action="positive" data-vote="yes" defer-hydration="" variant="secondary"><template shadowroot="open" shadowrootmode="open"><!--lit-part ds8wn4pKxlc=-->
+<!--lit-node 0--><button aria-labelledby="label-zrifxhtps4e" class="button" data-action="positive" data-variant="secondary" part="button">
+<!--lit-part--><!--lit-part bRP2a5ux/uw=--><span class="icon" part="icon"><!--lit-part GjE5cW6UBoM=--><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10v12m8-16.12L14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88"></path></svg><!--/lit-part--></span><!--/lit-part--><!--lit-part rI2hX8LXYZM=-->
+<!--lit-node 0--><span class="label" id="label-zrifxhtps4e" part="label"><!--lit-part Pz0gobCCM4E=--><slot></slot><!--/lit-part--></span>
+<!--/lit-part--><!--/lit-part-->
+</button>
+<!--/lit-part--></template>
+<!--lit-part-->Yes<!--/lit-part-->
+</mdn-button>
+<!--lit-node 5--><mdn-button action="negative" data-vote="no" defer-hydration="" variant="secondary"><template shadowroot="open" shadowrootmode="open"><!--lit-part ds8wn4pKxlc=-->
+<!--lit-node 0--><button aria-labelledby="label-rj8d9r0k1a" class="button" data-action="negative" data-variant="secondary" part="button">
+<!--lit-part--><!--lit-part bRP2a5ux/uw=--><span class="icon" part="icon"><!--lit-part IggRHjbPj/Q=--><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M17 14V2M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88"></path></svg><!--/lit-part--></span><!--/lit-part--><!--lit-part rI2hX8LXYZM=-->
+<!--lit-node 0--><span class="label" id="label-rj8d9r0k1a" part="label"><!--lit-part Pz0gobCCM4E=--><slot></slot><!--/lit-part--></span>
+<!--/lit-part--><!--/lit-part-->
+</button>
+<!--/lit-part--></template>
+<!--lit-part-->No<!--/lit-part-->
+</mdn-button>
+</div><!--/lit-part-->
+</fieldset><!--/lit-part--></template></mdn-content-feedback>
+<a class="article-footer__contribute" data-origin-href="https://developer.mozilla.org/en-US/docs/MDN/Community/Getting_started" href="#">Learn how to contribute</a> <p class="article-footer__last-modified">
+    This page was last modified on <time datetime="2025-09-04T15:38:30.000Z">â¨Sep 4, 2025â©</time> by <a data-origin-href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/contributors.txt" href="#">MDN contributors</a>.
+  </p> <div class="article-footer__links">
+<a class="external" data-origin-href="https://github.com/mdn/content/blob/main/files/en-us/learn_web_development/core/styling_basics/index.md?plain=1" href="#" rel="noopener" target="_blank" title="Folder: â¨en-us/learn_web_development/core/styling_basicsâ© (Opens in a new tab)">View this page on GitHub</a> â¢ <a class="external" data-origin-href="https://github.com/mdn/content/issues/new?template=page-report.yml&amp;mdn-url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn_web_development%2FCore%2FStyling_basics&amp;metadata=%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EPage+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Flearn_web_development%2Fcore%2Fstyling_basics%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FLearn_web_development%2FCore%2FStyling_basics%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Flearn_web_development%2Fcore%2Fstyling_basics%2Findex.md%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2Fd94f783daceb9635b94a4041bae68af31adfaa6c%0A*+Document+last+modified%3A+2025-09-04T15%3A38%3A30.000Z%0A%0A%3C%2Fdetails%3E" href="#" rel="noopener" target="_blank" title="This will take you to GitHub to file a new issue.">Report a problem with this content</a>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body>
+</html>

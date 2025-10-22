@@ -1,0 +1,83 @@
+{
+  "categories": [
+    {
+      "id": "html",
+      "name": "HTML"
+    },
+    {
+      "id": "css",
+      "name": "CSS"
+    },
+    {
+      "id": "js",
+      "name": "JS"
+    },
+    {
+      "id": "python",
+      "name": "Python"
+    },
+    {
+      "id": "java",
+      "name": "Java"
+    },
+    {
+      "id": "php",
+      "name": "PHP"
+    },
+    {
+      "id": "sql",
+      "name": "SQL"
+    }
+  ],
+  "tutorials": [
+    {
+      "id": "html_structuring-content-with-html---learn-web-development--mdn",
+      "title": "Structuring content with HTML - Learn web development | MDN",
+      "category": "html",
+      "path": "assets/tutorials/html/structuring-content-with-html---learn-web-development--mdn.html",
+      "description": "MDN HTML Intro"
+    },
+    {
+      "id": "css_css-styling-basics---learn-web-development--mdn",
+      "title": "CSS styling basics - Learn web development | MDN",
+      "category": "css",
+      "path": "assets/tutorials/css/css-styling-basics---learn-web-development--mdn.html",
+      "description": "MDN CSS First Steps"
+    },
+    {
+      "id": "js_dynamic-scripting-with-javascript---learn-web-development--mdn",
+      "title": "Dynamic scripting with JavaScript - Learn web development | MDN",
+      "category": "js",
+      "path": "assets/tutorials/js/dynamic-scripting-with-javascript---learn-web-development--mdn.html",
+      "description": "MDN JS First Steps"
+    },
+    {
+      "id": "python_3-an-informal-introduction-to-python--python-3140-documentation",
+      "title": "3. An Informal Introduction to Python — Python 3.14.0 documentation",
+      "category": "python",
+      "path": "assets/tutorials/python/3-an-informal-introduction-to-python--python-3140-documentation.html",
+      "description": "Python Intro"
+    },
+    {
+      "id": "java_lesson-the-hello-world-application-the-java-tutorials--getting-started",
+      "title": "Lesson: The \"Hello World!\" Application (The Java™ Tutorials > Getting Started)",
+      "category": "java",
+      "path": "assets/tutorials/java/lesson-the-hello-world-application-the-java-tutorials--getting-started.html",
+      "description": "Oracle Java Tutorial"
+    },
+    {
+      "id": "php_php-introduction",
+      "title": "PHP Introduction",
+      "category": "php",
+      "path": "assets/tutorials/php/php-introduction.html",
+      "description": "PHP Intro (W3Schools)"
+    },
+    {
+      "id": "sql_sql-introduction",
+      "title": "SQL Introduction",
+      "category": "sql",
+      "path": "assets/tutorials/sql/sql-introduction.html",
+      "description": "SQL Introduction (W3Schools)"
+    }
+  ]
+}

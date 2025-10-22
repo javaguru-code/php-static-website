@@ -28,6 +28,17 @@
         return window.innerWidth < 992; // Bootstrap lg breakpoint
     }
 
+    // Helper to close sibling submenus (for mobile nested menus)
+    function closeSiblingSubmenus(currentToggle) {
+        const parentMenu = currentToggle.closest('.dropdown-menu');
+        if (!parentMenu) return;
+        parentMenu.querySelectorAll(':scope > .dropend .dropdown-menu.show').forEach(sm => {
+            if (sm !== currentToggle.nextElementSibling) {
+                sm.classList.remove('show');
+            }
+        });
+    }
+
     // ============================================
     // DROPDOWN FUNCTIONALITY
     // ============================================
@@ -46,10 +57,9 @@
 
             if (!toggle || !menu) return;
 
-            // Desktop: Hover behavior (CSS handles most, but we can enhance)
+            // Desktop: Hover behavior
             if (!isMobileViewport()) {
                 dropdown.addEventListener('mouseenter', function() {
-                    // Add a small delay to prevent accidental triggers
                     this.hoverTimeout = setTimeout(() => {
                         if (!menu.classList.contains('show')) {
                             toggle.click();
@@ -59,7 +69,6 @@
 
                 dropdown.addEventListener('mouseleave', function() {
                     clearTimeout(this.hoverTimeout);
-                    // Keep menu open if mouse is over it
                     setTimeout(() => {
                         if (!dropdown.matches(':hover')) {
                             if (menu.classList.contains('show')) {
@@ -69,18 +78,57 @@
                     }, 200);
                 });
             }
+        });
 
-            // Mobile: Click behavior (Bootstrap handles this by default)
-            // We just need to ensure proper toggling
-            if (isMobileViewport()) {
-                toggle.addEventListener('click', function(e) {
-                    // On mobile, prevent navigation if there's a submenu
-                    if (dropdown.classList.contains('dropend') && !menu.classList.contains('show')) {
-                        e.preventDefault();
+        // Mobile: Handle nested dropdowns manually
+        if (isMobileViewport()) {
+            // Top-level dropdown toggles inside navbar (e.g., "Tutorials")
+            document.querySelectorAll('.navbar .nav-item.dropdown > .dropdown-toggle').forEach(topToggle => {
+                topToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const menu = this.nextElementSibling;
+                    // Close other open menus first
+                    document.querySelectorAll('.navbar .dropdown-menu.show').forEach(m => {
+                        if (m !== menu) m.classList.remove('show');
+                    });
+                    if (menu && menu.classList.contains('dropdown-menu')) {
+                        menu.classList.toggle('show');
+                        this.setAttribute('aria-expanded', menu.classList.contains('show'));
                     }
                 });
-            }
-        });
+            });
+
+            // Nested dropdown toggles (submenus)
+            document.querySelectorAll('.dropdown-menu .dropdown-toggle').forEach(nestedToggle => {
+                nestedToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const submenu = this.nextElementSibling;
+                    if (submenu && submenu.classList.contains('dropdown-menu')) {
+                        // Close sibling submenus
+                        closeSiblingSubmenus(this);
+                        // Toggle this submenu
+                        submenu.classList.toggle('show');
+                        this.setAttribute('aria-expanded', submenu.classList.contains('show'));
+                    }
+                });
+            });
+
+            // Close dropdowns when clicking outside (mobile only)
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.navbar')) {
+                    document.querySelectorAll('.navbar .dropdown-menu.show').forEach(m => m.classList.remove('show'));
+                }
+            });
+
+            // Prevent dropdown menus from closing when clicked inside
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+        }
     }
 
     /**
@@ -225,6 +273,65 @@
     }
 
     // ============================================
+    // SIDEBAR: Mobile offcanvas from desktop sidebar
+    // ============================================
+    function setupMobileSidebarOffcanvas() {
+        const sidebar = document.querySelector('aside.sidebar-nav');
+        if (!sidebar) return;
+
+        const fillOffcanvas = () => {
+            const offcanvas = document.getElementById('sidebarOffcanvas');
+            if (!offcanvas) return;
+            const body = offcanvas.querySelector('.sidebar-offcanvas-body');
+            if (!body) return;
+            const src = sidebar.querySelector('.sidebar-content') || sidebar;
+            if (src) {
+                // Always refresh content to ensure latest links are visible (even if placeholder comment exists)
+                body.innerHTML = src.innerHTML;
+            }
+        };
+
+        const ensureButton = () => {
+            if (!isMobileViewport()) return;
+            const existingButton = document.querySelector('[data-bs-target="#sidebarOffcanvas"]');
+            if (!existingButton) {
+                const mainContent = document.querySelector('main');
+                if (mainContent) {
+                    const btn = document.createElement('button');
+                    btn.id = 'sidebarToggleBtn';
+                    btn.type = 'button';
+                    btn.className = 'btn btn-outline-secondary btn-sm d-lg-none sidebar-toggle-btn';
+                    btn.setAttribute('data-bs-toggle', 'offcanvas');
+                    btn.setAttribute('data-bs-target', '#sidebarOffcanvas');
+                    btn.setAttribute('aria-controls', 'sidebarOffcanvas');
+                    btn.innerHTML = '<i class="bi bi-list"></i> Topics';
+                    mainContent.prepend(btn);
+                }
+            }
+        };
+
+        // Initial population and button setup
+        fillOffcanvas();
+        ensureButton();
+
+        // Populate when the offcanvas is about to show (ensures fresh content)
+        document.addEventListener('show.bs.offcanvas', (e) => {
+            if (e.target && e.target.id === 'sidebarOffcanvas') {
+                fillOffcanvas();
+            }
+        });
+
+        // Re-evaluate on resize
+        window.addEventListener('resize', () => {
+            setTimeout(() => {
+                if (isMobileViewport()) {
+                    ensureButton();
+                }
+            }, 100);
+        });
+    }
+
+    // ============================================
     // RESPONSIVE BEHAVIOR
     // ============================================
 
@@ -242,7 +349,12 @@
                 openDropdowns.forEach(menu => {
                     const toggle = menu.previousElementSibling;
                     if (toggle) {
-                        toggle.click();
+                        // If nested submenu (no Bootstrap instance), just remove show class
+                        if (toggle.closest('.dropdown-menu')) {
+                            menu.classList.remove('show');
+                        } else {
+                            toggle.click();
+                        }
                     }
                 });
 
@@ -265,6 +377,7 @@
         closeNavbarOnClick();
         highlightActivePage();
         addKeyboardNavigation();
+        setupMobileSidebarOffcanvas();
         handleResponsiveChanges();
 
         console.log('Navigation module initialized');

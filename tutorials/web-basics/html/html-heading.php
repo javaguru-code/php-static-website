@@ -9,7 +9,14 @@ include_file('includes/header.php');
 include 'sidebar.php';
 ?>
 
-<div class="tutorial-content">
+<main class="col-12 col-lg-9 pt-3 px-lg-4">
+    <div class="d-lg-none mb-3">
+        <button class="btn btn-primary" data-bs-target="#sidebarOffcanvas" data-bs-toggle="offcanvas">
+            <i class="bi bi-list"></i> Menu
+        </button>
+    </div>
+
+    <article class="tutorial-content">
     <section class="section">
         <h1 class="mb-4">HTML Headings</h1>
         
@@ -197,11 +204,16 @@ include 'sidebar.php';
         &lt;h3&gt;Frontend Frameworks&lt;/h3&gt;
         &lt;p&gt;Modern frameworks like React and Vue...&lt;/p&gt;
         
-        &lt;h3&gt;Backend Technologies&lt;/h3&gt;
-        &lt;p&gt;Node.js and serverless architectures...&lt;/p&gt;
-    &lt;/section&gt;
-    
-    &lt;footer&gt;
+        &lt;h3&gt;Backend Technologies&lt;/h3&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    </article>
+</main>
+</div>
+</div>
+<?php include_file('includes/footer.php'); ?>
         &lt;h2&gt;Conclusion&lt;/h2&gt;
         &lt;p&gt;The future looks bright for web development...&lt;/p&gt;
     &lt;/footer&gt;

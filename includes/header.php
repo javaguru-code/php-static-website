@@ -163,6 +163,17 @@ if (!isset($base_url)) {
         </div>
     </nav>
 
+    <!-- Global mobile sidebar offcanvas placeholder (content is injected on pages that have a sidebar) -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Topics</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body sidebar-offcanvas-body">
+        <!-- Sidebar content will be injected here on mobile -->
+      </div>
+    </div>
+
     <!-- Chat Modal -->
 <!-- <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true" data-api-url="<?php echo asset('ajax/openai.php'); ?>">
       <div class="modal-dialog modal-dialog-scrollable modal-lg">

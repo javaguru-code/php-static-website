@@ -5,13 +5,12 @@ $base_url = '../../../';
 $css_path = '../../../';
 $js_path = '../../../';
 include '../../../includes/header.php';
+include 'sidebar.php';
 ?>
 
 
 
-<div class="container-fluid">
-<div class="row">
-<main class="col-12 px-md-4 py-4 tutorial-content">
+<main class="col-12 col-lg-9 pt-3 px-lg-4 tutorial-content">
 <nav aria-label="breadcrumb" class="mb-4">
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href="../../../">Home</a></li>

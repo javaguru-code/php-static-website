@@ -1,0 +1,46 @@
+{
+  "categories": {
+    "html": {
+      "name": "HTML",
+      "sources": [
+        { "url": "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML", "selector": "main", "description": "MDN HTML Intro" }
+      ]
+    },
+    "css": {
+      "name": "CSS",
+      "sources": [
+        { "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps", "selector": "main", "description": "MDN CSS First Steps" }
+      ]
+    },
+    "js": {
+      "name": "JS",
+      "sources": [
+        { "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps", "selector": "main", "description": "MDN JS First Steps" }
+      ]
+    },
+    "python": {
+      "name": "Python",
+      "sources": [
+        { "url": "https://docs.python.org/3/tutorial/introduction.html", "selector": "div.body", "description": "Python Intro" }
+      ]
+    },
+    "java": {
+      "name": "Java",
+      "sources": [
+        { "url": "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/index.html", "selector": "body", "description": "Oracle Java Tutorial" }
+      ]
+    },
+    "php": {
+      "name": "PHP",
+      "sources": [
+        { "url": "https://www.w3schools.com/php/php_intro.asp", "selector": "#main", "description": "PHP Intro (W3Schools)" }
+      ]
+    },
+    "sql": {
+      "name": "SQL",
+      "sources": [
+        { "url": "https://www.w3schools.com/sql/sql_intro.asp", "selector": "#main", "description": "SQL Introduction (W3Schools)" }
+      ]
+    }
+  }
+}
