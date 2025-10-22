@@ -5,6 +5,7 @@ $base_url = '../../../';
 $css_path = '../../../';
 $js_path = '../../../';
 include '../../../includes/header.php';
+include 'sidebar.php';
 ?>
 
 
@@ -341,3 +342,4 @@ p {
 
 
 <?php include_file('includes/footer.php'); ?>
+
