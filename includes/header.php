@@ -164,7 +164,7 @@ if (!isset($base_url)) {
     </nav>
 
     <!-- Chat Modal -->
-<div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true" data-api-url="<?php echo asset('ajax/openai.php'); ?>">
+<!-- <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true" data-api-url="<?php echo asset('ajax/openai.php'); ?>">
       <div class="modal-dialog modal-dialog-scrollable modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -185,4 +185,4 @@ if (!isset($base_url)) {
           </div>
         </div>
       </div>
-    </div>
+    </div> -->

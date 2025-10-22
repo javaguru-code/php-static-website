@@ -26,6 +26,7 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
     <a class="nav-link <?= ($current_page == 'html-text-editors') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-text-editors">
       <i class="bi bi-pencil"></i> Text Editors
     </a>
+    
   </nav>
 </div>
 
@@ -33,17 +34,17 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
 <div class="sidebar-section mb-4">
   <h6 class="sidebar-section-title">HTML Basics</h6>
   <nav class="nav flex-column">
-    <a class="nav-link <?= ($current_page == 'html-elements') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-elements">
-      <i class="bi bi-code"></i> Elements
+  <a class="nav-link <?= ($current_page == 'html-building-blocks') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-building-blocks">
+      <i class="bi bi-boxes"></i>Building  Blocks
     </a>
     <a class="nav-link <?= ($current_page == 'html-tags') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-tags">
       <i class="bi bi-tag"></i> Tags
     </a>
-    <a class="nav-link <?= ($current_page == 'html-attributes') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-attributes">
-      <i class="bi bi-list-ul"></i> Attributes
+    <a class="nav-link <?= ($current_page == 'html-elements') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-elements">
+      <i class="bi bi-code"></i> Elements
     </a>
-    <a class="nav-link <?= ($current_page == 'html-building-blocks') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-building-blocks">
-      <i class="bi bi-boxes"></i> Building Blocks
+      <a class="nav-link <?= ($current_page == 'html-attributes') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-attributes">
+      <i class="bi bi-list-ul"></i> Attributes
     </a>
     <a class="nav-link <?= ($current_page == 'html-comments') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-comments">
       <i class="bi bi-chat-dots"></i> Comments

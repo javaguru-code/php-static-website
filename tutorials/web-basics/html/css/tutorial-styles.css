@@ -70,7 +70,11 @@ pre > code[class*="language-"] {
 
 /* Additional tutorial styles */
 .tutorial-content {
-    padding: 1.5rem 0;
+    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .tutorial-content h2 {
