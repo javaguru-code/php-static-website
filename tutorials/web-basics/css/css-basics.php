@@ -340,4 +340,4 @@ p {
 <script src="../../js/theme-toggle.js"></script>
 
 
-<?php include '../../../includes/footer.php'; ?>
+<?php include_file('includes/footer.php'); ?>

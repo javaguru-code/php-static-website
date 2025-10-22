@@ -321,4 +321,4 @@ Java 21 (September 2023) - LTS - Virtual Threads, Record Patterns</code></pre>
 <script src="../../js/theme-toggle.js"></script>
 
 
-<?php include '../../../includes/footer.php'; ?>
+<?php include_file('includes/footer.php'); ?>

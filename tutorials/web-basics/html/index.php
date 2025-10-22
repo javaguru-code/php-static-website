@@ -2,20 +2,18 @@
 // Include config first to get helper functions
 require_once __DIR__ . '/../../../includes/config.php';
 
-$page_title = 'HTML Tutorial - Full Stack Master';
-$page_description = 'Learn HTML from basics to advanced concepts with our comprehensive HTML tutorial. Perfect for beginners and experienced developers.';
-
 // Use the base URL from environment
 $base_url = get_base_url();
 $css_path = $base_url;
 $js_path = $base_url;
 
+$page_title = 'HTML Tutorial - Full Stack Master';
+$page_description = 'Learn HTML from basics to advanced concepts with our comprehensive HTML tutorial. Perfect for beginners and experienced developers.';
+
 // Include header and sidebar using the base directory
 include_file('includes/header.php');
-include_file('tutorials/web-basics/html/sidebar.php');
+include 'sidebar.php';
 ?>
-
-
 
 <main class="col-12 col-lg-9 pt-3 px-lg-4">
     <div class="d-lg-none mb-3">
@@ -387,17 +385,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 <?php include_file('includes/footer.php'); ?>
-
-        <!-- Next Steps -->
-        <section class="text-center py-5">
-            <div class="p-5 bg-light rounded-3">
-                <h2 class="display-6 fw-bold mb-4">Ready to Get Started?</h2>
-                <p class="lead mb-4">Begin your web development journey by learning the building blocks of the web.</p>
-                <a href="<?= $base_url ?>tutorials/web-basics/html/intro-to-web" class="btn btn-primary btn-lg px-4 me-2">
-                    Start Learning HTML <i class="bi bi-arrow-right ms-2"></i>
-                </a>
-                <a href="#" class="btn btn-outline-secondary btn-lg px-4">
-                    <i class="bi bi-book me-2"></i> View All Tutorials
-                </a>
-            </div>
-        </section>
+       

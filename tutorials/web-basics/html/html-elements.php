@@ -1,14 +1,17 @@
+
 <?php
 require_once __DIR__ . '/../../../includes/config.php';
-$page_title = 'Full Stack Master - Html Elements';
+$page_title = 'HTML Elements - Full Stack Master';
 $page_description = 'Full Stack Master - Programming Tutorials';
 $base_url = get_base_url();
 $css_path = $base_url;
 $js_path = $base_url;
 include_file('includes/header.php');
-include_file('tutorials/web-basics/html/sidebar.php');
+include 'sidebar.php';
 ?>
 
+         
+   
 
 
-<?php include '../../../includes/footer.php'; ?>
+<?php include_file('includes/footer.php'); ?>

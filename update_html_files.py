@@ -25,12 +25,12 @@ $base_url = get_base_url();
 $css_path = $base_url;
 $js_path = $base_url;
 include_file('includes/header.php');
-include_file('tutorials/web-basics/html/sidebar.php');
+include 'sidebar.php';
 ?>
 
 
 
-<?php include '../../../includes/footer.php'; ?>'''
+<?php include_file('includes/footer.php'); ?>'''
         
         # Write the new content to the file
         with open(filepath, 'w', encoding='utf-8') as f:

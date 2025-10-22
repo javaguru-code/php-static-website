@@ -6,7 +6,7 @@ function render_html_page($slug, $title) {
     $page_title = $title . ' - HTML Tutorial';
     $page_description = $title . ' tutorial page';
     include_file('includes/header.php');
-    include_file('tutorials/web-basics/html/sidebar.php');
+    include 'sidebar.php';
     echo '<main class="col-12 col-lg-9 pt-3 px-lg-4">';
     echo '<article class="tutorial-content">';
     echo '<h1 class="display-5">' . htmlspecialchars($title) . '</h1>';
