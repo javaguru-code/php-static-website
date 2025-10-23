@@ -26,7 +26,6 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
     <a class="nav-link <?= ($current_page == 'html-text-editors') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-text-editors">
       <i class="bi bi-pencil"></i> Text Editors
     </a>
-    
   </nav>
 </div>
 
@@ -34,8 +33,8 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
 <div class="sidebar-section mb-4">
   <h6 class="sidebar-section-title">HTML Basics</h6>
   <nav class="nav flex-column">
-  <a class="nav-link <?= ($current_page == 'html-building-blocks') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-building-blocks">
-      <i class="bi bi-boxes"></i>Building  Blocks
+    <a class="nav-link <?= ($current_page == 'html-building-blocks') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-building-blocks">
+      <i class="bi bi-boxes"></i> Building Blocks
     </a>
     <a class="nav-link <?= ($current_page == 'html-tags') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-tags">
       <i class="bi bi-tag"></i> Tags
@@ -43,16 +42,22 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
     <a class="nav-link <?= ($current_page == 'html-elements') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-elements">
       <i class="bi bi-code"></i> Elements
     </a>
-      <a class="nav-link <?= ($current_page == 'html-attributes') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-attributes">
+    <a class="nav-link <?= ($current_page == 'html-attributes') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-attributes">
       <i class="bi bi-list-ul"></i> Attributes
     </a>
     <a class="nav-link <?= ($current_page == 'html-comments') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-comments">
       <i class="bi bi-chat-dots"></i> Comments
     </a>
+    <a class="nav-link <?= ($current_page == 'html-file-paths') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-file-paths">
+      <i class="bi bi-folder2-open"></i> File Paths
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-quotations') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-quotations">
+      <i class="bi bi-blockquote-left"></i> Quotations
+    </a>
   </nav>
 </div>
 
-<!-- HTML Content -->
+<!-- Content Structure -->
 <div class="sidebar-section mb-4">
   <h6 class="sidebar-section-title">Content Structure</h6>
   <nav class="nav flex-column">
@@ -61,6 +66,12 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
     </a>
     <a class="nav-link <?= ($current_page == 'html-paragraph') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-paragraph">
       <i class="bi bi-paragraph"></i> Paragraphs
+    </a>
+    <a class="nav-link <?= ($current_page == 'text-formatting') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/text-formatting">
+      <i class="bi bi-type-bold"></i> Text Formatting
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-computercode') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-computercode">
+      <i class="bi bi-terminal"></i> Computer Code
     </a>
     <a class="nav-link <?= ($current_page == 'html-phrase-tags') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-phrase-tags">
       <i class="bi bi-quote"></i> Phrase Tags
@@ -71,10 +82,19 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
     <a class="nav-link <?= ($current_page == 'html-image') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-image">
       <i class="bi bi-image"></i> Images
     </a>
+    <a class="nav-link <?= ($current_page == 'html-block-inline') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-block-inline">
+      <i class="bi bi-ui-checks"></i> Block vs Inline
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-div') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-div">
+      <i class="bi bi-layout-text-window"></i> Div Element
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-span') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-span">
+      <i class="bi bi-square"></i> Span Element
+    </a>
   </nav>
 </div>
 
-<!-- HTML Lists -->
+<!-- Lists -->
 <div class="sidebar-section mb-4">
   <h6 class="sidebar-section-title">Lists</h6>
   <nav class="nav flex-column">
@@ -93,7 +113,7 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
   </nav>
 </div>
 
-<!-- HTML Tables -->
+<!-- Tables -->
 <div class="sidebar-section mb-4">
   <h6 class="sidebar-section-title">Tables</h6>
   <nav class="nav flex-column">
@@ -103,7 +123,57 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
   </nav>
 </div>
 
-<!-- HTML Advanced -->
+<!-- Forms -->
+<div class="sidebar-section mb-4">
+  <h6 class="sidebar-section-title">Forms</h6>
+  <nav class="nav flex-column">
+    <a class="nav-link <?= ($current_page == 'forms') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/forms">
+      <i class="bi bi-ui-checks-grid"></i> Forms Overview
+    </a>
+    <a class="nav-link <?= ($current_page == 'form-elements') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/form-elements">
+      <i class="bi bi-input-cursor-text"></i> Form Elements
+    </a>
+    <a class="nav-link <?= ($current_page == 'input-types') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/input-types">
+      <i class="bi bi-ui-radios"></i> Input Types
+    </a>
+    <a class="nav-link <?= ($current_page == 'input-attributes') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/input-attributes">
+      <i class="bi bi-sliders"></i> Input Attributes
+    </a>
+    <a class="nav-link <?= ($current_page == 'form-attributes') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/form-attributes">
+      <i class="bi bi-card-list"></i> Form Attributes
+    </a>
+    <a class="nav-link <?= ($current_page == 'form-validation') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/form-validation">
+      <i class="bi bi-shield-check"></i> Form Validation
+    </a>
+  </nav>
+</div>
+
+<!-- Media & Graphics -->
+<div class="sidebar-section mb-4">
+  <h6 class="sidebar-section-title">Media & Graphics</h6>
+  <nav class="nav flex-column">
+    <a class="nav-link <?= ($current_page == 'audio-video') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/audio-video">
+      <i class="bi bi-camera-video"></i> Audio & Video
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-youtube') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-youtube">
+      <i class="bi bi-play-btn"></i> YouTube Embeds
+    </a>
+    <a class="nav-link <?= ($current_page == 'canvas-svg') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/canvas-svg">
+      <i class="bi bi-brush"></i> Canvas & SVG
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-icons') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-icons">
+      <i class="bi bi-stars"></i> Icons
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-favicon') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-favicon">
+      <i class="bi bi-bookmark-star"></i> Favicon
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-plugins') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-plugins">
+      <i class="bi bi-plug"></i> Plug-ins
+    </a>
+  </nav>
+</div>
+
+<!-- Advanced HTML -->
 <div class="sidebar-section mb-4">
   <h6 class="sidebar-section-title">Advanced HTML</h6>
   <nav class="nav flex-column">
@@ -119,15 +189,21 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
     <a class="nav-link <?= ($current_page == 'html-javascript') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-javascript">
       <i class="bi bi-braces"></i> JavaScript
     </a>
+    <a class="nav-link <?= ($current_page == 'html-vs-xhtml') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-vs-xhtml">
+      <i class="bi bi-code-slash"></i> HTML vs XHTML
+    </a>
   </nav>
 </div>
 
-<!-- HTML Styling -->
+<!-- Styling -->
 <div class="sidebar-section mb-4">
   <h6 class="sidebar-section-title">Styling</h6>
   <nav class="nav flex-column">
     <a class="nav-link <?= ($current_page == 'html-with-css') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-with-css">
       <i class="bi bi-brush"></i> CSS with HTML
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-colors') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-colors">
+      <i class="bi bi-palette"></i> Colors
     </a>
     <a class="nav-link <?= ($current_page == 'html-classes') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-classes">
       <i class="bi bi-layers"></i> Classes
@@ -138,10 +214,29 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
     <a class="nav-link <?= ($current_page == 'html-responsive') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-responsive">
       <i class="bi bi-phone"></i> Responsive Design
     </a>
+    <a class="nav-link <?= ($current_page == 'html-style-guide') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-style-guide">
+      <i class="bi bi-journal-text"></i> Style Guide
+    </a>
   </nav>
 </div>
 
-<!-- HTML References -->
+<!-- HTML APIs -->
+<div class="sidebar-section mb-4">
+  <h6 class="sidebar-section-title">HTML APIs</h6>
+  <nav class="nav flex-column">
+    <a class="nav-link <?= ($current_page == 'html5-api') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html5-api">
+      <i class="bi bi-puzzle"></i> HTML5 APIs
+    </a>
+    <a class="nav-link <?= ($current_page == 'local-storage') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/local-storage">
+      <i class="bi bi-hdd"></i> Web Storage
+    </a>
+    <a class="nav-link <?= ($current_page == 'geolocation') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/geolocation">
+      <i class="bi bi-geo"></i> Geolocation
+    </a>
+  </nav>
+</div>
+
+<!-- References -->
 <div class="sidebar-section mb-4">
   <h6 class="sidebar-section-title">References</h6>
   <nav class="nav flex-column">
@@ -150,6 +245,9 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
     </a>
     <a class="nav-link <?= ($current_page == 'html-symbols') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-symbols">
       <i class="bi bi-award"></i> Symbols
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-emojis') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-emojis">
+      <i class="bi bi-emoji-smile"></i> Emojis
     </a>
     <a class="nav-link <?= ($current_page == 'html-charset') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-charset">
       <i class="bi bi-translate"></i> Character Sets
@@ -160,7 +258,7 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
   </nav>
 </div>
 
-<!-- SEO Best Practices -->
+<!-- SEO & Best Practices -->
 <div class="sidebar-section">
   <h6 class="sidebar-section-title">SEO & Best Practices</h6>
   <nav class="nav flex-column">
