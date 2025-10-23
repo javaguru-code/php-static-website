@@ -241,14 +241,14 @@ a:hover {
 }
 
 /* Navbar link base styles with 3D effect */
-.navbar.navbar-expand-lg .navbar-nav .nav-link {
+.navbar .navbar-nav .nav-link {
     transition: all 0.3s cubic-bezier(.2,.8,.2,1);
     font-weight: 500;
     color: white !important;
     opacity: 1;
     padding: 0.5rem 1.2rem;
     position: relative;
-    margin: 0 0.5rem;
+    margin: 0.25rem 0.5rem;
     background: linear-gradient(135deg, var(--accent-red), var(--accent-pink));
     border-radius: 8px;
     box-shadow: 
@@ -256,6 +256,9 @@ a:hover {
         0 4px 8px -2px rgba(217, 7, 28, 0.2);
     transform: translateY(0);
     text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    display: block;
+    text-align: left;
+    white-space: nowrap;
 }
 
 /* 3D hover effect */
@@ -350,28 +353,98 @@ a:hover {
     filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
 }
 
-/* Center the main menubar (Home, Tutorials, Interview, About, Contact) */
-/* Keep mobile collapse behavior; center on medium+ screens */
-@media (min-width: 768px) {
+/* Mobile menu styles */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: var(--bs-body-bg);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        max-height: 80vh;
+        overflow-y: auto;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .navbar-nav {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 0.25rem 0;
+    }
+    
+    .dropdown-menu {
+        position: static !important;
+        float: none;
+        width: 100%;
+        margin: 0.25rem 0 0.25rem 1rem;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.03);
+        border-left: 3px solid var(--accent-pink);
+        display: none;
+    }
+    
+    .dropdown-menu.show {
+        display: block;
+    }
+    
+    .dropdown-item {
+        padding: 0.5rem 1.5rem;
+        color: var(--bs-body-color) !important;
+    }
+    
+    .dropdown-item:hover, .dropdown-item:focus {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    .dropdown-toggle::after {
+        float: right;
+        margin-top: 0.5rem;
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
+        transition: transform 0.3s ease;
+    }
+    
+    .dropdown-toggle[aria-expanded="true"]::after {
+        transform: rotate(-180deg);
+    }
+    
+    /* Prevent body scroll when mobile menu is open */
+    body.menu-open {
+        overflow: hidden;
+        height: 100vh;
+    }
+    
+    /* Make sure dropdowns don't have pointer events that interfere with clicks */
+    .dropdown-menu * {
+        pointer-events: auto !important;
+    }
+}
+
+/* Desktop menu styles */
+@media (min-width: 992px) {
     .navbar-collapse {
         display: flex !important;
-        justify-content: center; /* center the collapsed nav container */
-    }
-
-    /* the UL sometimes uses ms-auto to push items right; reset on desktop */
-    .navbar-nav.ms-auto {
-        margin-left: 0 !important;
+        flex-basis: auto;
     }
 
     .navbar-nav {
         display: flex;
         gap: 0.5rem;
         align-items: center;
+        width: 100%;
     }
-
-    /* push the theme-toggle (list item with ms-lg-3) to the far right while keeping menu centered */
+    
+    /* push the theme-toggle to the far right */
     .navbar-nav .nav-item.ms-lg-3 {
         margin-left: auto !important;
+    }
+    
+    .dropdown-menu {
+        position: absolute;
     }
 }
 

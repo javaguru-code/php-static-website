@@ -40,5 +40,7 @@
     <script src="<?php echo asset('js/navigation.js'); ?>"></script>
     <script src="<?php echo asset('js/chat.js'); ?>"></script>
     <script src="<?php echo asset('js/code-editor.js'); ?>"></script>
+    <script src="<?php echo asset('js/mobile-menu.js'); ?>"></script>
+    
 </body>
 </html>

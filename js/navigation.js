@@ -372,24 +372,50 @@
      * Initialize all navigation functionality
      */
     function init() {
-        setupMultilevelDropdowns();
+        // Only initialize desktop dropdowns if not on mobile
+        if (!isMobileViewport()) {
+            setupMultilevelDropdowns();
+        }
+        
         preventDropdownCloseOnClick();
         closeNavbarOnClick();
         highlightActivePage();
-        addKeyboardNavigation();
         setupMobileSidebarOffcanvas();
         handleResponsiveChanges();
-
-        console.log('Navigation module initialized');
+        
+        // Listen for window resize to handle mobile/desktop transitions
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                if (isMobileViewport()) {
+                    // Clean up desktop dropdowns if resized to mobile
+                    document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                        menu.classList.remove('show');
+                    });
+                } else {
+                    // Initialize desktop dropdowns if resized to desktop
+                    setupMultilevelDropdowns();
+                }
+            }, 250);
+        });
     }
 
-    // Run on DOM ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
+    // Only initialize if not on mobile (let mobile-menu.js handle mobile)
+    if (!isMobileViewport()) {
         init();
+    } else {
+        // Still need to run these for mobile
+        highlightActivePage();
+        setupMobileSidebarOffcanvas();
+        
+        // Remove any existing click handlers from dropdown toggles
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            // Clone the node to remove all event listeners
+            const newToggle = toggle.cloneNode(true);
+            toggle.parentNode.replaceChild(newToggle, toggle);
+        });
     }
-
 })();
 
 /* ============================================
