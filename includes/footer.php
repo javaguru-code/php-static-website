@@ -1,4 +1,5 @@
-    <!-- ============================================
+  </main>
+  <!-- ============================================
          SECTION: Footer
          - Copyright and social links
     ============================================= -->
@@ -16,6 +17,29 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Debug Info -->
+    <script>
+        console.log('🔄 Footer script tag executing');
+        console.log('Base URL:', '<?php echo $base_url; ?>');
+        
+        // Test if we can load the script
+        const script = document.createElement('script');
+        script.src = '<?php echo $base_url; ?>js/mobile-sidebar-test.js';
+        script.onload = function() {
+            console.log('✅ Test script loaded successfully');
+        };
+        script.onerror = function() {
+            console.error('❌ Failed to load test script');
+            console.log('Trying to load from full path: ' + window.location.origin + '/fsmaster/js/mobile-sidebar-test.js');
+            
+            // Try with full path
+            const fullPathScript = document.createElement('script');
+            fullPathScript.src = window.location.origin + '/fsmaster/js/mobile-sidebar-test.js';
+            document.head.appendChild(fullPathScript);
+        };
+        document.head.appendChild(script);
+    </script>
 
     <!-- Bootstrap 5.3+ JS Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

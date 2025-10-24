@@ -546,27 +546,27 @@ a:hover {
     border-right: 1px solid var(--sidebar-border);
     min-height: calc(100vh - 70px);
     overflow-y: auto;
-    max-width: 250px; /* Limit maximum width */
-    flex: 0 0 16.666667%; /* col-lg-2 equivalent */
+    max-width: 300px; /* Width for tutorial sidebar */
+    flex: 0 0 300px; /* Fixed width for tutorial sidebar */
     padding-right: 0;
 }
 
 /* Adjust main content when sidebar is present */
 .sidebar-nav + .col-lg-9 {
-    flex: 0 0 83.333333%;
-    max-width: 83.333333%;
+    flex: 0 0 80%;
+    max-width: 80%;
 }
 
 /* Responsive adjustments */
 @media (min-width: 1200px) {
     .sidebar-nav {
-        flex: 0 0 16.666667%;
-        max-width: 250px;
+        flex: 0 0 300px;
+        max-width: 300px;
     }
     
     .sidebar-nav + .col-lg-9 {
-        flex: 0 0 83.333333%;
-        max-width: 83.333333%;
+        flex: 0 0 calc(100% - 300px);
+        max-width: calc(100% - 300px);
     }
 }
 

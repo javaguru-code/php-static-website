@@ -24,8 +24,9 @@ if (!isset($base_url)) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?php echo asset('css/style.css'); ?>">
-    <link rel="stylesheet" href="<?php echo asset('css/code-editor.css'); ?>">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>css/code-editor.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>css/mobile-sidebar.css">
     
     <!-- Prism.js Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
@@ -48,7 +49,7 @@ if (!isset($base_url)) {
             </a>
             
             <!-- Mobile Toggle Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -165,15 +166,25 @@ if (!isset($base_url)) {
 
     <!-- Global mobile sidebar offcanvas placeholder (content is injected on pages that have a sidebar) -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Topics</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body sidebar-offcanvas-body">
-        <!-- Sidebar content will be injected here on mobile -->
-      </div>
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarOffcanvasLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0" id="mobileSidebarContent">
+            <!-- Sidebar content will be injected here on mobile -->
+        </div>
     </div>
 
+    <!-- Mobile Menu Toggle Button (visible only on mobile) -->
+    <div class="d-lg-none position-fixed bottom-3 end-3 zindex-1030">
+        <button id="mobileMenuToggle" class="btn btn-primary rounded-circle p-3 shadow" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas">
+            <i class="bi bi-list fs-4"></i>
+        </button>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main class="col-12 col-lg-9 pt-3 px-lg-4">
+    
     <!-- Chat Modal -->
 <!-- <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true" data-api-url="<?php echo asset('ajax/openai.php'); ?>">
       <div class="modal-dialog modal-dialog-scrollable modal-lg">
