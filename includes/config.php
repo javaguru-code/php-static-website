@@ -69,11 +69,24 @@ function asset($path) {
  * Helper function to include files using base directory
  */
 function include_file($path) {
-    $full_path = get_base_dir() . ltrim(str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $path), '/\\');
-    if (file_exists($full_path)) {
-        return include $full_path;
+    global $base_dir, $base_url, $page_title, $page_description, $page_extra_head, $css_path, $js_path;
+    $fullPath = $base_dir . ltrim($path, '/');
+    
+    // Extract variables to make them available in the included file
+    extract([
+        'base_url' => $base_url,
+        'page_title' => $page_title ?? '',
+        'page_description' => $page_description ?? '',
+        'page_extra_head' => $page_extra_head ?? '',
+        'css_path' => $css_path ?? $base_url,
+        'js_path' => $js_path ?? $base_url
+    ]);
+    
+    if (file_exists($fullPath)) {
+        include $fullPath;
+    } else {
+        trigger_error("Include file not found: " . $fullPath, E_USER_WARNING);
     }
-    throw new Exception("File not found: " . $full_path);
 }
 
 /**

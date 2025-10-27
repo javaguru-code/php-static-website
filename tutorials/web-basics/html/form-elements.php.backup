@@ -283,7 +283,7 @@ include 'sidebar.php';
         
         &lt;div class="col-md-4"&gt;
             &lt;div class="input-group"&gt;
-                <span class="input-group-text">Result:</span>
+                <span class="input-group-text"&gt;Result:&lt;/span&gt;
                 &lt;output name="result" for="a b" class="form-control"&gt;100&lt;/output&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -336,7 +336,7 @@ include 'sidebar.php';
 
 <script>
 // Form validation script
-function () {
+(function () {
     'use strict'
     var forms = document.querySelectorAll('.needs-validation')
     Array.prototype.slice.call(forms)
@@ -349,7 +349,7 @@ function () {
                 form.classList.add('was-validated')
             }, false)
         })
-}
+})()
 </script>
 
 <?php include_file('includes/footer.php'); ?>

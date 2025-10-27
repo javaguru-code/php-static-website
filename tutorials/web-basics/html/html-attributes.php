@@ -8,8 +8,14 @@ $js_path = $base_url;
 include_file('includes/header.php');
 include 'sidebar.php';
 ?>
+<main class="col-12 col-lg-9 pt-3 px-lg-4">
+    <div class="d-lg-none mb-3">
+        <button class="btn btn-primary" data-bs-target="#sidebarOffcanvas" data-bs-toggle="offcanvas">
+            <i class="bi bi-list"></i> Menu
+        </button>
+    </div>
 
-<div class="tutorial-content">
+    <article class="tutorial-content">
     <section class="section">
         <h1 class="mb-4">HTML Attributes</h1>
         

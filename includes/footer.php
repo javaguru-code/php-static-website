@@ -21,11 +21,24 @@
     <!-- Debug Info -->
     <script>
         console.log('🔄 Footer script tag executing');
-        console.log('Base URL:', '<?php echo $base_url; ?>');
+        
+        // Ensure base_url is defined
+        window.BASE_URL = '<?php echo isset($base_url) ? $base_url : ''; ?>';
+        
+        // If base_url is not set, try to determine it from the current URL
+        if (!window.BASE_URL) {
+            const scripts = document.getElementsByTagName('script');
+            const currentScript = scripts[scripts.length - 1].src;
+            const basePath = currentScript.split('/').slice(0, -3).join('/'); // Go up 3 levels from includes/js/
+            window.BASE_URL = basePath + '/';
+            console.log('Derived BASE_URL:', window.BASE_URL);
+        } else {
+            console.log('Using configured BASE_URL:', window.BASE_URL);
+        }
         
         // Test if we can load the script
         const script = document.createElement('script');
-        script.src = '<?php echo $base_url; ?>js/mobile-sidebar-test.js';
+        script.src = window.BASE_URL + 'js/mobile-sidebar-test.js';
         script.onload = function() {
             console.log('✅ Test script loaded successfully');
         };

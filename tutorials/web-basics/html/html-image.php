@@ -6,38 +6,26 @@ $base_url = get_base_url();
 $css_path = $base_url;
 $js_path = $base_url;
 
-// Add Prism.js for code highlighting
+// Add Prism.js for code highlighting and include custom styles
 $page_extra_head = '
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markup-templating.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-    .img-example {
-        max-width: 100%;
-        height: auto;
-        border: 1px solid #dee2e6;
-        border-radius: 4px;
-        padding: 10px;
-        margin: 10px 0;
-    }
-    .img-container {
-        background-color: #f8f9fa;
-        padding: 15px;
-        border-radius: 4px;
-        margin: 10px 0;
-    }
-    .img-thumbnail {
-        max-width: 200px;
-        height: auto;
-    }
-</style>';
+<link rel="stylesheet" href="' . $base_url . 'tutorials/web-basics/html/css/tutorial-styles.css">';
 
 include_file('includes/header.php');
 include 'sidebar.php';
 ?>
 
-<div class="tutorial-content">
+<main class="col-12 col-lg-9 pt-3 px-lg-4">
+    <div class="d-lg-none mb-3">
+        <button class="btn btn-primary" data-bs-target="#sidebarOffcanvas" data-bs-toggle="offcanvas">
+            <i class="bi bi-list"></i> Menu
+        </button>
+    </div>
+
+    <article class="tutorial-content">
     <section class="section">
         <h1 class="mb-4">HTML Images</h1>
         

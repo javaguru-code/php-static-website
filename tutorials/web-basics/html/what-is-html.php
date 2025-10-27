@@ -9,8 +9,14 @@ include_file('includes/header.php');
 include 'sidebar.php';
 ?>
 
+<main class="col-12 col-lg-9 pt-3 px-lg-4">
+    <div class="d-lg-none mb-3">
+        <button class="btn btn-primary" data-bs-target="#sidebarOffcanvas" data-bs-toggle="offcanvas">
+            <i class="bi bi-list"></i> Menu
+        </button>
+    </div>
 
-<div class="tutorial-content">
+    <article class="tutorial-content">
     <section class="mb-5">
         <h2>What is HTML?</h2>
         <p>HTML (HyperText Markup Language) is the standard markup language for creating and structuring web content. It provides the basic building blocks for web pages and applications, allowing you to define the structure and meaning of content on the web.</p>

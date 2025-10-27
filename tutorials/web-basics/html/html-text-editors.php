@@ -9,7 +9,14 @@ include_file('includes/header.php');
 include 'sidebar.php';
 ?>
 
-<div class="tutorial-content">
+<main class="col-12 col-lg-9 pt-3 px-lg-4">
+    <div class="d-lg-none mb-3">
+        <button class="btn btn-primary" data-bs-target="#sidebarOffcanvas" data-bs-toggle="offcanvas">
+            <i class="bi bi-list"></i> Menu
+        </button>
+    </div>
+
+    <article class="tutorial-content">
     <section class="mb-5">
         <h1>HTML Text Editors</h1>
         <p class="lead">A good text editor is essential for writing HTML code efficiently. While you can use any plain text editor, specialized code editors provide features like syntax highlighting, auto-completion, and extensions that make web development much easier.</p>
