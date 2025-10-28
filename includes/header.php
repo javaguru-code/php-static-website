@@ -49,7 +49,7 @@ if (!isset($base_url)) {
             </a>
             
             <!-- Mobile Toggle Button -->
-            <button class="navbar-toggler" type="button" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler d-lg-none" type="button" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
