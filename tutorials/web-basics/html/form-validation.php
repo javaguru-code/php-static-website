@@ -27,7 +27,7 @@ include_file('includes/header.php');
 include 'sidebar.php';
 ?>
 
-<main class="col-12 col-lg-9 pt-3 px-lg-4">
+<main class="col-9 col-lg-9 pt-3 px-lg-4">
     <article class="tutorial-content">
         <h1 class="mb-4">HTML5 Form Validation</h1>
         <p class="lead">A comprehensive guide to client-side form validation using HTML5 attributes and JavaScript.</p>

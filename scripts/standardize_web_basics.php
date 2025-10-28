@@ -95,7 +95,7 @@ PHP;
     // Ensure <main> has the standardized class
     $content = preg_replace(
         '/<main\s+class=\"[^\"]*\"\s*>/i',
-        '<main class="col-12 col-lg-9 pt-3 px-lg-4">',
+        '<main class="col-9 col-lg-9 pt-3 px-lg-4">',
         $content,
         1
     );

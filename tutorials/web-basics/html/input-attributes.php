@@ -50,7 +50,7 @@ include_file('includes/header.php');
 include 'sidebar.php';
 ?>
 
-<main class="col-12 col-lg-9 pt-3 px-lg-4">
+<main class="col-9 col-lg-9 pt-3 px-lg-4">
     <article class="tutorial-content">
         <h1 class="mb-4">HTML Input Attributes</h1>
         <p class="lead">A comprehensive guide to all HTML input attributes with detailed examples and best practices.</p>
@@ -60,7 +60,7 @@ include 'sidebar.php';
             <p>These are the most commonly used attributes that work with most input types.</p>
             
             <div class="attribute-example">
-                <h4><code>name</code> - Identifies form data after submission</h4>
+                <h4>name - Identifies form data after submission</h4>
                 <div class="demo">
                     <input type="text" name="username" class="form-control mb-2" placeholder="Enter your username">
                     <small class="form-text text-muted">The name attribute is essential for form submission.</small>
@@ -69,7 +69,7 @@ include 'sidebar.php';
             </div>
 
             <div class="attribute-example">
-                <h4><code>value</code> - Specifies the initial value</h4>
+                <h4>value - Specifies the initial value</h4>
                 <div class="demo">
                     <input type="text" value="default@example.com" class="form-control mb-2">
                 </div>
@@ -77,7 +77,7 @@ include 'sidebar.php';
             </div>
 
             <div class="attribute-example">
-                <h4><code>placeholder</code> - Displays hint text</h4>
+                <h4>placeholder - Displays hint text</h4>
                 <div class="demo">
                     <input type="text" placeholder="Search..." class="form-control mb-2">
                 </div>
@@ -89,7 +89,7 @@ include 'sidebar.php';
             <h2>Form Validation Attributes</h2>
             
             <div class="attribute-example">
-                <h4><code>required</code> - Makes the field mandatory</h4>
+                <h4>required - Makes the field mandatory</h4>
                 <div class="demo">
                     <input type="text" required class="form-control mb-2" placeholder="Required field">
                     <small class="form-text text-muted">Cannot be left blank</small>
@@ -98,7 +98,7 @@ include 'sidebar.php';
             </div>
 
             <div class="attribute-example">
-                <h4><code>pattern</code> - Validates against a regex pattern</h4>
+                <h4>pattern - Validates against a regex pattern</h4>
                 <div class="demo">
                     <input type="text" pattern="[A-Za-z]{3,}" class="form-control mb-2" 
                            placeholder="At least 3 letters">
@@ -108,7 +108,7 @@ include 'sidebar.php';
             </div>
 
             <div class="attribute-example">
-                <h4><code>min</code>, <code>max</code>, and <code>step</code> - Numeric constraints</h4>
+                <h4>min</code>, <code>max</code>, and <code>step - Numeric constraints</h4>
                 <div class="demo">
                     <input type="number" min="0" max="100" step="5" value="50" class="form-control mb-2">
                     <small class="form-text text-muted">Number between 0-100, in steps of 5</small>
@@ -121,7 +121,7 @@ include 'sidebar.php';
             <h2>Input State Attributes</h2>
             
             <div class="attribute-example">
-                <h4><code>readonly</code> - Prevents editing but submits with form</h4>
+                <h4>readonly - Prevents editing but submits with form</h4>
                 <div class="demo">
                     <input type="text" value="Read-only field" readonly class="form-control mb-2">
                 </div>
@@ -129,7 +129,7 @@ include 'sidebar.php';
             </div>
 
             <div class="attribute-example">
-                <h4><code>disabled</code> - Disables the input (not submitted)</h4>
+                <h4>disabled - Disables the input (not submitted)</h4>
                 <div class="demo">
                     <input type="text" value="Disabled field" disabled class="form-control mb-2">
                 </div>
@@ -137,7 +137,7 @@ include 'sidebar.php';
             </div>
 
             <div class="attribute-example">
-                <h4><code>autofocus</code> - Automatically focuses the input on page load</h4>
+                <h4>autofocus - Automatically focuses the input on page load</h4>
                 <div class="demo">
                     <input type="text" autofocus class="form-control mb-2" placeholder="This field has autofocus">
                 </div>
@@ -149,7 +149,7 @@ include 'sidebar.php';
             <h2>Advanced Attributes</h2>
             
             <div class="attribute-example">
-                <h4><code>autocomplete</code> - Controls browser autofill behavior</h4>
+                <h4>autocomplete - Controls browser autofill behavior</h4>
                 <div class="demo">
                     <input type="email" autocomplete="email" class="form-control mb-2" placeholder="email@example.com">
                     <small class="form-text text-muted">Browser will suggest email addresses</small>
@@ -158,7 +158,7 @@ include 'sidebar.php';
             </div>
 
             <div class="attribute-example">
-                <h4><code>list</code> - Associates with a &lt;datalist&gt; for suggestions</h4>
+                <h4>list - Associates with a &lt;datalist&gt; for suggestions</h4>
                 <div class="demo">
                     <input list="browsers" class="form-control mb-2" placeholder="Choose a browser">
                     <datalist id="browsers">
@@ -180,7 +180,7 @@ include 'sidebar.php';
             </div>
 
             <div class="attribute-example">
-                <h4><code>multiple</code> - Allows multiple values (for email and file inputs)</h4>
+                <h4>multiple - Allows multiple values (for email and file inputs)</h4>
                 <div class="demo">
                     <input type="file" multiple class="form-control mb-2">
                     <small class="form-text text-muted">Hold Ctrl/Cmd to select multiple files</small>
@@ -193,7 +193,7 @@ include 'sidebar.php';
             <h2>Form Submission Attributes</h2>
             
             <div class="attribute-example">
-                <h4><code>form</code> - Associates input with a form (when outside the form)</h4>
+                <h4>form - Associates input with a form (when outside the form)</h4>
                 <div class="demo">
                     <form id="myForm" class="mb-3">
                         <input type="text" name="username" class="form-control mb-2" placeholder="Username">
@@ -207,7 +207,7 @@ include 'sidebar.php';
             </div>
 
             <div class="attribute-example">
-                <h4><code>formaction</code>, <code>formmethod</code>, <code>formtarget</code> - Override form attributes</h4>
+                <h4>formaction</code>, <code>formmethod</code>, <code>formtarget - Override form attributes</h4>
                 <div class="demo">
                     <form class="mb-3">
                         <input type="text" name="search" class="form-control mb-2" placeholder="Search">
@@ -231,7 +231,7 @@ include 'sidebar.php';
             <h2>Additional Attributes</h2>
             
             <div class="attribute-example">
-                <h4><code>minlength</code> and <code>maxlength</code> - Length constraints</h4>
+                <h4>minlength</code> and <code>maxlength - Length constraints</h4>
                 <div class="demo">
                     <input type="text" minlength="3" maxlength="10" class="form-control mb-2" 
                            placeholder="3-10 characters">
@@ -241,7 +241,7 @@ include 'sidebar.php';
             </div>
 
             <div class="attribute-example">
-                <h4><code>size</code> - Specifies the visible width in characters</h4>
+                <h4>size - Specifies the visible width in characters</h4>
                 <div class="demo">
                     <input type="text" size="30" class="form-control d-inline-block w-auto mb-2">
                 </div>

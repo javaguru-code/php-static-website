@@ -8,7 +8,7 @@ include_file('includes/header.php');
 include 'sidebar.php';
 ?>
 
-<main class="col-12 col-lg-9 pt-3 px-lg-4">
+<main class="col-9 col-lg-9 pt-3 px-lg-4">
 <article class="tutorial-content">
   <h1 class="mb-4">HTML vs XHTML</h1>
 

@@ -15,7 +15,7 @@ include_file('includes/header.php');
 include_file('tutorials/web-basics/css/sidebar.php');
 ?>
 
-<main class="col-12 col-lg-9 pt-3 px-lg-4">
+<main class="col-9 col-lg-9 pt-3 px-lg-4">
 
     <!-- Hero Section -->
     <section class="hero-section py-4">

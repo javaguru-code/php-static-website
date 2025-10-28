@@ -52,7 +52,7 @@ include_file('includes/header.php');
 include 'sidebar.php';
 ?>
 
-<main class="col-12 col-lg-9 pt-3 px-lg-4">
+<main class="col-9 col-lg-9 pt-3 px-lg-4">
     <article>
         <h1 class="mb-4">HTML Form Elements</h1>
         <p class="lead">Learn about all HTML form elements with detailed examples and best practices.</p>

@@ -18,7 +18,7 @@ include_file('includes/header.php');
 include 'sidebar.php';
 ?>
 
-<main class="col-12 col-lg-9 pt-3 px-lg-4">
+<main class="col-9 col-lg-9 pt-3 px-lg-4">
     <div class="d-lg-none mb-3">
         <button class="btn btn-primary" data-bs-target="#sidebarOffcanvas" data-bs-toggle="offcanvas">
             <i class="bi bi-list"></i> Menu

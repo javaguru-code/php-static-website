@@ -183,7 +183,7 @@ if (!isset($base_url)) {
     </div>
 
     <!-- Main Content Wrapper -->
-    <main class="col-12 col-lg-9 pt-3 px-lg-4">
+    <main class="col-9 col-lg-12 pt-3 px-lg-4">
     
     <!-- Chat Modal -->
 <!-- <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true" data-api-url="<?php echo asset('ajax/openai.php'); ?>">

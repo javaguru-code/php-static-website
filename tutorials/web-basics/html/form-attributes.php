@@ -82,7 +82,7 @@ include 'sidebar.php';
 ?>
 
 
-<main class="col-12 col-lg-9 pt-3 px-lg-4">
+<main class="col-9 col-lg-9 pt-3 px-lg-4">
     <div class="d-lg-none mb-3">
         <button class="btn btn-primary" data-bs-target="#sidebarOffcanvas" data-bs-toggle="offcanvas">
             <i class="bi bi-list"></i> Menu
@@ -111,7 +111,7 @@ include 'sidebar.php';
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">
                         <i class="fas fa-paper-plane me-2"></i>Form Action Example
-                        <small class="d-block mt-1">action="/submit-form"</small>
+                        <small class="d-block mt-1" action="/submit-form"</small>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -157,7 +157,7 @@ include 'sidebar.php';
 
         <!-- Method Attribute -->
         <section class="mb-5" id="method-attribute">
-            <h2 class="mb-4"><code>method</code> Attribute</h2>
+            <h2 class="mb-4"><span>method</span> Attribute</h2>
             <p>Defines the HTTP method used to send form data (GET or POST).</p>
             
             <div class="row g-4">
