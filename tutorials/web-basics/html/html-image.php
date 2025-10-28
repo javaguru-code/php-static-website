@@ -6,13 +6,14 @@ $base_url = get_base_url();
 $css_path = $base_url;
 $js_path = $base_url;
 
-// Add Prism.js for code highlighting and include custom styles
+// Add external CSS and JS files
 $page_extra_head = '
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markup-templating.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="' . $base_url . 'tutorials/web-basics/html/css/tutorial-styles.css">';
+<link rel="stylesheet" href="' . $base_url . 'tutorials/web-basics/html/css/tutorial-styles.css">
+<link rel="stylesheet" href="' . $base_url . 'tutorials/web-basics/html/css/html-image.css">';
 
 include_file('includes/header.php');
 include 'sidebar.php';
@@ -45,9 +46,14 @@ include 'sidebar.php';
                 </div>
                 
                 <h3 class="h5 mt-4">Basic Image Example</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="h6">HTML Code:</h4>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
                         <pre><code class="language-html">&lt;!-- Basic image with alt text --&gt;
 &lt;img src="images/example.jpg" alt="A beautiful landscape"&gt;
 
@@ -57,26 +63,30 @@ include 'sidebar.php';
 <!-- Image with title (hover text) -->
 &lt;img src="images/example.jpg" alt="Mountain view" title="Beautiful mountain landscape"&gt;</code></pre>
                     </div>
-                    <div class="col-md-6">
-                        <h4 class="h6">Live Example:</h4>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
                         <div class="img-container">
                             <img src="https://images.pexels.com/photos/302804/pexels-photo-302804.jpeg" alt="Beautiful mountain landscape" class="img-example" title="Mountain landscape" width="400" height="300">
                             <p class="text-muted mt-2 mb-0">Hover over the image to see the title text</p>
                         </div>
-                    </div>
                 </div>
                 
                 <h3 class="h5 mt-4">Responsive Images</h3>
                 <p>Make images responsive using Bootstrap classes or CSS. Always set <code>max-width: 100%</code> and <code>height: auto</code> to prevent overflow.</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="h6">HTML Code:</h4>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
                         <pre><code class="language-html">&lt;!-- Using Bootstrap class for responsive images --&gt;
 &lt;img src="images/large.jpg" alt="Responsive image" class="img-fluid"&gt;
 
 <!-- Using inline CSS --&gt;
-&lt;img src="images/large.jpg" alt="Responsive image" style="max-width: 100%; height: auto;"&gt;
+&lt;img src="images/large.jpg" alt="Responsive image" class="img-fluid"&gt;
 
 <!-- Responsive image with different sources --&gt;
 &lt;picture&gt;
@@ -85,21 +95,25 @@ include 'sidebar.php';
     &lt;img src="small.jpg" alt="Responsive image" class="img-fluid"&gt;
 &lt;/picture&gt;</code></pre>
                     </div>
-                    <div class="col-md-6">
-                        <h4 class="h6">Live Example:</h4>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
                         <div class="img-container">
                             <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Mountain landscape at sunset" class="img-fluid rounded" loading="lazy">
                             <p class="text-muted mt-2 mb-0">This image will scale with the viewport width</p>
                         </div>
-                    </div>
                 </div>
                 
                 <h3 class="h5 mt-4">Image Alignment and Styling</h3>
                 <p>Use Bootstrap classes or CSS to align and style your images:</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="h6">HTML Code:</h4>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
                         <pre><code class="language-html">&lt;!-- Centered image --&gt;
 &lt;div class="text-center"&gt;
     &lt;img src="image.jpg" alt="Centered image" class="img-fluid"&gt;
@@ -114,8 +128,8 @@ include 'sidebar.php';
 <!-- Image with border -->
 &lt;img src="image.jpg" alt="Bordered image" class="img-thumbnail"&gt;</code></pre>
                     </div>
-                    <div class="col-md-6">
-                        <h4 class="h6">Live Example:</h4>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
                         <div class="text-center mb-3">
                             <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="Profile picture" class="img-thumbnail rounded-circle d-inline-block" width="100" height="100" loading="lazy">
                         </div>
@@ -124,41 +138,49 @@ include 'sidebar.php';
                             <img src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg" alt="Ocean wave" class="rounded-circle me-2" width="100" height="100" loading="lazy">
                             <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg" alt="Mountain range" class="img-thumbnail" width="100" height="100" loading="lazy">
                         </div>
-                    </div>
                 </div>
                 
                 <h3 class="h5 mt-4">Figure and Figcaption</h3>
                 <p>Use the <code>&lt;figure&gt;</code> element to mark up photos, diagrams, illustrations, etc., with an optional <code>&lt;figcaption&gt;</code>.</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="h6">HTML Code:</h4>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
                         <pre><code class="language-html">&lt;figure class="figure"&gt;
     &lt;img src="image.jpg" class="figure-img img-fluid rounded" alt="A beautiful landscape"&gt;
     &lt;figcaption class="figure-caption"&gt;A beautiful landscape with mountains and a lake.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 <!-- Right-aligned figure with smaller text -->
-&lt;figure class="figure float-end ms-3" style="max-width: 300px;"&gt;
+&lt;figure class="figure float-end ms-3" class="figure figure-float"&gt;
     &lt;img src="image.jpg" class="figure-img img-fluid" alt="Example"&gt;
     &lt;figcaption class="figure-caption text-end"&gt;Right-aligned figure.&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
                     </div>
-                    <div class="col-md-6">
-                        <h4 class="h6">Live Example:</h4>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
                         <figure class="figure">
                             <img src="https://images.pexels.com/photos/4171485/pexels-photo-4171485.jpeg" class="figure-img img-fluid rounded" alt="Mountain landscape with lake" loading="lazy">
                             <figcaption class="figure-caption">This is an example of a figure with a caption below the image.</figcaption>
                         </figure>
-                    </div>
                 </div>
                 
                 <h3 class="h5 mt-4">Image Maps</h3>
                 <p>Create clickable areas on an image using the <code>&lt;map&gt;</code> and <code>&lt;area&gt;</code> elements.</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="h6">HTML Code:</h4>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
                         <pre><code class="language-html">&lt;img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379"&gt;
 
 &lt;map name="workmap"&gt;
@@ -167,8 +189,8 @@ include 'sidebar.php';
     &lt;area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm"&gt;
 &lt;/map&gt;</code></pre>
                     </div>
-                    <div class="col-md-6">
-                        <h4 class="h6">Live Example:</h4>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
                         <div class="img-container">
                             <img src="https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg" alt="Office workspace with computer" usemap="#workmap" class="img-fluid rounded">
                             <map name="workmap">
@@ -178,15 +200,20 @@ include 'sidebar.php';
                             </map>
                             <p class="text-muted mt-2 mb-0">Click on the computer, phone, or coffee cup to see the effect</p>
                         </div>
-                    </div>
                 </div>
                 
                 <h3 class="h5 mt-4">Downloading Images</h3>
                 <p>There are several ways to allow users to download images from your website. Here are the most common methods:</p>
                 
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <h4 class="h6">1. Using the download attribute</h4>
+                <div class="mb-4">
+                    <h4 class="h5 mb-3">1. Using the download attribute</h4>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 class="h6 mb-0">HTML Code:</h5>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
                         <pre><code class="language-html">&lt;!-- Basic download --&gt;
 &lt;a href="images/photo.jpg" download&gt;
     &lt;img src="images/photo-thumb.jpg" alt="Download this image"&gt;
@@ -202,8 +229,8 @@ include 'sidebar.php';
     &lt;i class="fas fa-download me-2"&gt;&lt;/i&gt;Download Image
 &lt;/a&gt;</code></pre>
                     </div>
-                    <div class="col-md-6">
-                        <h4 class="h6">Live Example:</h4>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
                         <div class="p-3 border rounded text-center">
                             <img src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg" alt="Mountain landscape with lake" class="img-fluid rounded mb-3" loading="lazy">
                             <div class="d-flex gap-2 justify-content-center">
@@ -219,9 +246,16 @@ include 'sidebar.php';
                 </div>
 
                 <div class="row mb-4">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <h4 class="h6">2. Using JavaScript</h4>
-                        <pre><code class="language-html">&lt;button onclick="downloadImage('https://example.com/image.jpg', 'my-image.jpg')"&gt;
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="h6 mb-0">HTML & JavaScript Code:</h5>
+                            <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                                <i class="bi bi-clipboard me-1"></i> Copy
+                            </button>
+                        </div>
+                        <div class="code-snippet mb-4">
+                            <pre><code class="language-html">&lt;button onclick="downloadImage('https://example.com/image.jpg', 'my-image.jpg')"&gt;
     Download with JavaScript
 &lt;/button&gt;
 
@@ -238,33 +272,10 @@ function downloadImage(url, filename) {
     document.body.removeChild(a);
 }
 &lt;/script&gt;</code></pre>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 class="h6">3. Canvas to Image Download</h4>
-                        <pre><code class="language-html">&lt;canvas id="myCanvas" width="300" height="200" style="border:1px solid #ddd;"&gt;&lt;/canvas&gt;
-&lt;button id="downloadCanvas" class="btn btn-sm btn-primary mt-2"&gt;
-    Download Canvas as Image
-&lt;/button&gt;
-
-&lt;script&gt;
-document.getElementById('downloadCanvas').addEventListener('click', function() {
-    const canvas = document.getElementById('myCanvas');
-    const ctx = canvas.getContext('2d');
-    
-    // Draw something on canvas (example)
-    ctx.fillStyle = '#4CAF50';
-    ctx.fillRect(10, 10, 100, 100);
-    ctx.font = '20px Arial';
-    ctx.fillStyle = 'white';
-    ctx.fillText('Download Me!', 30, 70);
-    
-    // Convert canvas to image and download
-    const link = document.createElement('a');
-    link.download = 'canvas-image.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-});
-&lt;/script&gt;</code></pre>
+                        </div>
+                        <div class="example-output">
+                            <button onclick="downloadImage('https://via.placeholder.com/300x200', 'my-image.jpg')">Download with JavaScript</button>
+                        </div>
                     </div>
                 </div>
 
@@ -281,9 +292,14 @@ document.getElementById('downloadCanvas').addEventListener('click', function() {
                 <h3 class="h5 mt-4">Lazy Loading Images</h3>
                 <p>Improve page load performance by lazy loading images that are not in the viewport.</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="h6">HTML Code:</h4>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
                         <pre><code class="language-html">&lt;!-- Native lazy loading (modern browsers) --&gt;
 &lt;img src="image.jpg" loading="lazy" alt="Lazy loaded image"&gt;
 
@@ -320,97 +336,13 @@ document.getElementById('downloadCanvas').addEventListener('click', function() {
     });
 &lt;/script&gt;</code></pre>
                     </div>
-                    <div class="col-md-6">
-                        <h4 class="h6">Best Practices:</h4>
-                        <ul>
-                            <li>Always include the <code>alt</code> attribute for accessibility</li>
-                            <li>Specify <code>width</code> and <code>height</code> to prevent layout shifts</li>
-                            <li>Use modern image formats like WebP or AVIF for better compression</li>
-                            <li>Optimize images before uploading (compress, resize to needed dimensions)</li>
-                            <li>Use responsive images with <code>srcset</code> and <code>sizes</code> attributes</li>
-                            <li>Consider using a CDN for faster image delivery</li>
-                        </ul>
-                        
-                        <div class="alert alert-warning">
-                            <h5 class="alert-heading">Performance Tip:</h5>
-                            <p class="mb-0">Large images can significantly slow down your page. Always optimize your images and consider using responsive images with the <code>srcset</code> and <code>sizes</code> attributes to serve the most appropriate image for each device.</p>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
+                        <div class="example-output">
+                            <img src="https://via.placeholder.com/300x200" alt="Lazy loaded image" loading="lazy">
+                            <p class="small text-muted mt-2 mb-0">This image will be lazy loaded when it comes into view.</p>
                         </div>
-                    </div>
                 </div>
-
-                <h3 class="h5 mt-4">Responsive Images with srcset and sizes</h3>
-                <p>Serve the most appropriate image for each device and viewport size:</p>
-                
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <h4 class="h6">HTML Code:</h4>
-                        <pre><code class="language-html">&lt;!-- Basic srcset with x-descriptors (pixel density) --&gt;
-&lt;img src="image.jpg"
-     srcset="image-1x.jpg 1x,
-             image-2x.jpg 2x,
-             image-3x.jpg 3x"
-     alt="Responsive image"&gt;
-
-<!-- srcset with w-descriptors and sizes -->
-&lt;img src="image-800w.jpg"
-     srcset="image-400w.jpg 400w,
-             image-800w.jpg 800w,
-             image-1200w.jpg 1200w"
-     sizes="(max-width: 600px) 100vw,
-            (max-width: 1200px) 50vw,
-            33vw"
-     alt="Responsive image with sizes"
-     loading="lazy"
-     width="800"
-     height="600"&gt;
-
-<!-- Using picture element for art direction -->
-&lt;picture&gt;
-    &lt;source media="(min-width: 1200px)" 
-            srcset="large.jpg 1x, large@2x.jpg 2x"&gt;
-    &lt;source media="(min-width: 768px)" 
-            srcset="medium.jpg 1x, medium@2x.jpg 2x"&gt;
-    &lt;img src="small.jpg" 
-         srcset="small.jpg 1x, small@2x.jpg 2x" 
-         alt="Responsive image with art direction"
-         loading="lazy"
-         width="800"
-         height="600"&gt;
-&lt;/picture&gt;</code></pre>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 class="h6">Key Concepts:</h4>
-                        <ul>
-                            <li><strong>srcset</strong>: Provides multiple image sources with their widths or pixel densities</li>
-                            <li><strong>sizes</strong>: Defines the display size of the image in the page layout</li>
-                            <li><strong>w descriptor</strong>: Specifies the width of each image source</li>
-                            <li><strong>x descriptor</strong>: Indicates the pixel density (e.g., 1x, 2x for Retina displays)</li>
-                        </ul>
-                        
-                        <div class="alert alert-warning mt-3">
-                            <h5 class="alert-heading">Best Practices:</h5>
-                            <ul class="mb-0">
-                                <li>Always include a default <code>src</code> for browsers that don't support srcset</li>
-                                <li>Use descriptive filenames that indicate the image size (e.g., <code>image-800w.jpg</code>)</li>
-                                <li>Test on different devices and screen sizes</li>
-                                <li>Consider using an image CDN for automatic optimization</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <h3 class="h5 mt-4">Controlling Image Spacing</h3>
-                <p>Proper spacing around images improves readability and visual appeal. Here are various ways to control spacing:</p>
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="h6">HTML & CSS Code:</h4>
-                        <pre><code class="language-html">&lt;!-- Using Bootstrap spacing utilities --&gt;
-&lt;img src="image.jpg" alt="Spaced image" class="m-3 p-2 border"&gt;
-
-<!-- Using CSS margin and padding -->
-&lt;style&gt;
-    .spaced-image {
         margin: 1rem;
         padding: 0.5rem;
         background: #f8f9fa;
@@ -471,7 +403,7 @@ document.getElementById('downloadCanvas').addEventListener('click', function() {
                                 <p class="mb-0">This image has margin on the right (<code>me-3</code>) and is vertically centered with flexbox.</p>
                             </div>
                             
-                            <div class="d-grid gap-3" style="grid-template-columns: repeat(3, 1fr);">
+                            <div class="d-grid gap-3" class="image-grid">
                                 <img src="https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg" alt="Mountain peak" class="img-thumbnail" loading="lazy">
                                 <img src="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg" alt="Forest path" class="img-thumbnail" loading="lazy">
                                 <img src="https://images.pexels.com/photos/210205/pexels-photo-210205.jpeg" alt="Desert landscape" class="img-thumbnail" loading="lazy">

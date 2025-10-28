@@ -32,69 +32,83 @@ include 'sidebar.php';
                 <h3 class="h5 mt-4">Basic Link Syntax</h3>
                 <p>The most basic link consists of the <code>&lt;a&gt;</code> tag with an <code>href</code> attribute that specifies the destination URL.</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="h6">HTML Code:</h4>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
                         <pre><code class="language-html">&lt;!-- Text link --&gt;
 &lt;a href="https://example.com"&gt;Visit Example.com&lt;/a&gt;
 
-<!-- Link to another page on the same site -->
+&lt;!-- Link to another page on the same site --&gt;
 &lt;a href="/about.html"&gt;About Us&lt;/a&gt;
 
-<!-- Link to a section on the same page -->
+&lt;!-- Link to a section on the same page --&gt;
 &lt;a href="#section-id"&gt;Jump to Section&lt;/a&gt;
 
-<!-- Link that opens in a new tab -->
+&lt;!-- Link that opens in a new tab --&gt;
 &lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;
     Open in New Tab
 &lt;/a&gt;
 
-<!-- Link with title attribute -->
+&lt;!-- Link with title attribute --&gt;
 &lt;a href="https://example.com" title="Go to Example.com"&gt;
     Hover for tooltip
 &lt;/a&gt;
 
-<!-- Link with email address -->
+&lt;!-- Link with email address --&gt;
 &lt;a href="mailto:contact@example.com"&gt;Email Us&lt;/a&gt;
 
-<!-- Link to download a file -->
+&lt;!-- Link to download a file --&gt;
 &lt;a href="/files/document.pdf" download&gt;Download PDF&lt;/a&gt;</code></pre>
                     </div>
-                    <div class="col-md-6">
-                        <h4 class="h6">Live Example:</h4>
-                        <div class="p-3 border rounded">
-                            <p class="mb-3">
-                                <a href="https://example.com" class="me-3">Visit Example.com</a>
-                                <a href="#section-id" class="me-3">Jump to Section</a>
-                            </p>
-                            <p class="mb-3">
-                                <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="me-3">
-                                    <i class="fas fa-external-link-alt me-1"></i> New Tab
-                                </a>
-                                <a href="#" title="This is a tooltip" class="me-3">
-                                    <i class="fas fa-info-circle me-1"></i> Hover Me
-                                </a>
-                            </p>
-                            <p class="mb-3">
-                                <a href="mailto:contact@example.com" class="me-3">
-                                    <i class="fas fa-envelope me-1"></i> Email Us
-                                </a>
-                                <a href="#" class="btn btn-sm btn-outline-primary" onclick="alert('In a real implementation, this would download a file.'); return false;">
-                                    <i class="fas fa-download me-1"></i> Download
-                                </a>
-                            </p>
-                        </div>
-                        
-                        <div class="alert alert-info mt-3">
-                            <h5 class="alert-heading">Best Practices:</h5>
-                            <ul class="mb-0">
-                                <li>Always include meaningful link text that describes the destination</li>
-                                <li>Use <code>target="_blank"</code> with <code>rel="noopener noreferrer"</code> for security</li>
-                                <li>Make email links obvious with <code>mailto:</code></li>
-                                <li>Use the <code>title</code> attribute for additional context</li>
-                            </ul>
-                        </div>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
+                    <div class="p-3 border rounded bg-light">
+                        <p class="mb-3">
+                            <a href="https://example.com" class="me-3">Visit Example.com</a>
+                            <a href="#section-id" class="me-3">Jump to Section</a>
+                        </p>
+                        <p class="mb-3">
+                            <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="me-3">
+                                <i class="fas fa-external-link-alt me-1"></i> New Tab
+                            </a>
+                            <a href="#" title="This is a tooltip" class="me-3">
+                                <i class="fas fa-info-circle me-1"></i> Hover Me
+                            </a>
+                        </p>
+                        <p class="mb-0">
+                            <a href="mailto:contact@example.com" class="me-3">
+                                <i class="fas fa-envelope me-1"></i> Email Us
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-primary" onclick="alert('In a real implementation, this would download a file.'); return false;">
+                                <i class="fas fa-download me-1"></i> Download
+                            </a>
+                        </p>
                     </div>
+                </div>
+                
+                <div class="alert alert-info mt-4">
+                    <h5 class="alert-heading">Best Practices:</h5>
+                    <ul class="mb-0">
+                        <li>Always include meaningful link text that describes the destination</li>
+                        <li>Use <code>target="_blank"</code> with <code>rel="noopener noreferrer"</code> for security</li>
+                        <li>Make email links obvious with <code>mailto:</code></li>
+                        <li>Use the <code>title</code> attribute for additional context</li>
+                    </ul>
+                </div>
+                
+                <div class="alert alert-info mt-4">
+                    <h5 class="alert-heading">Best Practices:</h5>
+                    <ul class="mb-0">
+                        <li>Always include meaningful link text that describes the destination</li>
+                        <li>Use <code>target="_blank"</code> with <code>rel="noopener noreferrer"</code> for security</li>
+                        <li>Make email links obvious with <code>mailto:</code></li>
+                        <li>Use the <code>title</code> attribute for additional context</li>
+                    </ul>
                 </div>
                 
                 <div class="card mt-4">
@@ -150,28 +164,29 @@ include 'sidebar.php';
                 <h2 class="h4 mb-4" id="basic-links">1. Basic Links</h2>
                 <p>The most common use of the anchor tag is to link to another web page. The <code>href</code> attribute specifies the URL of the page you want to link to.</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="alert alert-light">
-                            <h6>Example:</h6>
-                            <pre class="mb-0"><code class="language-html">&lt;!-- External link --&gt;
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
+                        <pre><code class="language-html">&lt;!-- External link --&gt;
 &lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;
 
-<!-- Internal link -->
- &gt; 
+&lt;!-- Internal link --&gt;
 &lt;a href="about.html"&gt;About Us&lt;/a&gt;
 
-<!-- Link with title attribute -->
- &gt;
+&lt;!-- Link with title attribute --&gt;
 &lt;a href="services.html" title="View our services"&gt;Our Services&lt;/a&gt;</code></pre>
-                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="p-3 border rounded">
-                            <p><a href="https://www.example.com" class="me-3">Visit Example.com</a></p>
-                            <p><a href="#" class="me-3">About Us</a> (example of internal link)</p>
-                            <p class="mb-0"><a href="#" title="View our services" class="me-3">Our Services</a> (hover to see title)</p>
-                        </div>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
+                    <div class="p-3 border rounded bg-light">
+                        <p><a href="https://www.example.com" class="me-3">Visit Example.com</a></p>
+                        <p><a href="#" class="me-3">About Us</a> (example of internal link)</p>
+                        <p class="mb-0"><a href="#" title="View our services" class="me-3">Our Services</a> (hover to see title)</p>
                     </div>
                 </div>
                 
@@ -232,27 +247,29 @@ include 'sidebar.php';
                 </div>
                 
                 <h3 class="h5 mt-4">Target Attribute Examples</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="alert alert-light">
-                            <h6>Example:</h6>
-                            <pre class="mb-0"><code class="language-html">&lt;!-- Open in new tab --&gt;
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
+                        <pre><code class="language-html">&lt;!-- Open in new tab --&gt;
 &lt;a href="https://example.com" target="_blank"&gt;Open in New Tab&lt;/a&gt;
 
-<!-- Open in parent frame -->
- &gt;
+&lt;!-- Open in parent frame --&gt;
 &lt;a href="about.html" target="_parent"&gt;Open in Parent Frame&lt;/a&gt;
 
-<!-- Open in top frame (breaks out of frames) -->
+&lt;!-- Open in top frame (breaks out of frames) --&gt;
 &lt;a href="index.html" target="_top"&gt;Break Out of Frames&lt;/a&gt;</code></pre>
-                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="p-3 border rounded">
-                            <p><a href="https://example.com" target="_blank" class="me-3">Open in New Tab</a></p>
-                            <p><a href="#" class="me-3">Open in Parent Frame</a> (example)</p>
-                            <p class="mb-0"><a href="#" class="me-3">Break Out of Frames</a> (example)</p>
-                        </div>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
+                    <div class="p-3 border rounded bg-light">
+                        <p><a href="https://example.com" target="_blank" class="me-3">Open in New Tab</a></p>
+                        <p><a href="#" class="me-3">Open in Parent Frame</a> (example)</p>
+                        <p class="mb-0"><a href="#" class="me-3">Break Out of Frames</a> (example)</p>
                     </div>
                 </div>
             </div>
@@ -264,11 +281,15 @@ include 'sidebar.php';
                 <h2 class="h4 mb-4" id="bookmarks">3. Page Bookmarks</h2>
                 <p>You can create bookmarks (also known as anchor links) to allow users to jump to specific sections of a webpage.</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="alert alert-light">
-                            <h6>Example:</h6>
-                            <pre class="mb-0"><code class="language-html">&lt;!-- Create a bookmark with id --&gt;
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
+                        <pre><code class="language-html">&lt;!-- Create a bookmark with id --&gt;
 &lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
 &lt;p&gt;Content for section 1...&lt;/p&gt;
 
@@ -278,22 +299,21 @@ include 'sidebar.php';
 &lt;!-- Link to the bookmarks --&gt;
 &lt;a href="#section1"&gt;Jump to Section 1&lt;/a&gt; | 
 &lt;a href="#section2"&gt;Jump to Section 2&lt;/a&gt;</code></pre>
-                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="p-3 border rounded">
-                            <div class="mb-3">
-                                <a href="#demo-section1" class="btn btn-sm btn-outline-primary me-2">Jump to Demo Section 1</a>
-                                <a href="#demo-section2" class="btn btn-sm btn-outline-primary">Jump to Demo Section 2</a>
-                            </div>
-                            <div class="border p-3 mb-3" id="demo-section1">
-                                <h4 class="h5">Demo Section 1</h4>
-                                <p class="mb-0">This is the content for demo section 1. Click the link above to see the page jump effect.</p>
-                            </div>
-                            <div class="border p-3" id="demo-section2">
-                                <h4 class="h5">Demo Section 2</h4>
-                                <p class="mb-0">This is the content for demo section 2. The link at the top of this example will bring you here.</p>
-                            </div>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
+                    <div class="p-3 border rounded bg-light">
+                        <div class="mb-3">
+                            <a href="#demo-section1" class="btn btn-sm btn-outline-primary me-2">Jump to Demo Section 1</a>
+                            <a href="#demo-section2" class="btn btn-sm btn-outline-primary">Jump to Demo Section 2</a>
+                        </div>
+                        <div class="border p-3 mb-3" id="demo-section1">
+                            <h4 class="h5">Demo Section 1</h4>
+                            <p class="mb-0">This is the content for demo section 1. Click the link above to see the page jump effect.</p>
+                        </div>
+                        <div class="border p-3" id="demo-section2">
+                            <h4 class="h5">Demo Section 2</h4>
+                            <p class="mb-0">This is the content for demo section 2. The link at the top of this example will bring you here.</p>
                         </div>
                     </div>
                 </div>
@@ -314,30 +334,33 @@ include 'sidebar.php';
                 <h2 class="h4 mb-4" id="email-links">4. Email Links</h2>
                 <p>You can create links that open the user's default email client with a pre-filled email using the <code>mailto:</code> protocol.</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="alert alert-light">
-                            <h6>Example:</h6>
-                            <pre class="mb-0"><code class="language-html">&lt;!-- Basic email link --&gt;
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
+                        <pre><code class="language-html">&lt;!-- Basic email link --&gt;
 &lt;a href="mailto:contact@example.com"&gt;Email Us&lt;/a&gt;
 
-<!-- Email with subject and body -->
+&lt;!-- Email with subject and body --&gt;
 &lt;a href="mailto:contact@example.com?subject=Inquiry&body=Hello, I have a question"&gt;
     Send us an email
 &lt;/a&gt;
 
-<!-- Email with multiple recipients -->
+&lt;!-- Email with multiple recipients --&gt;
 &lt;a href="mailto:contact@example.com,support@example.com"&gt;
     Contact our team
 &lt;/a&gt;</code></pre>
-                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="p-3 border rounded">
-                            <p><a href="mailto:contact@example.com" class="me-3">Email Us</a></p>
-                            <p><a href="mailto:contact@example.com?subject=Inquiry&body=Hello, I have a question" class="me-3">Send us an email</a></p>
-                            <p class="mb-0"><a href="mailto:contact@example.com,support@example.com" class="me-3">Contact our team</a></p>
-                        </div>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
+                    <div class="p-3 border rounded bg-light">
+                        <p><a href="mailto:contact@example.com" class="me-3">Email Us</a></p>
+                        <p><a href="mailto:contact@example.com?subject=Inquiry&body=Hello, I have a question" class="me-3">Send us an email</a></p>
+                        <p class="mb-0"><a href="mailto:contact@example.com,support@example.com" class="me-3">Contact our team</a></p>
                     </div>
                 </div>
                 
@@ -359,35 +382,38 @@ include 'sidebar.php';
                 <h2 class="h4 mb-4" id="download-links">5. Download Links</h2>
                 <p>The <code>download</code> attribute specifies that the target will be downloaded when a user clicks on the hyperlink.</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="alert alert-light">
-                            <h6>Example:</h6>
-                            <pre class="mb-0"><code class="language-html">&lt;!-- Simple download link --&gt;
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
+                        <pre><code class="language-html">&lt;!-- Simple download link --&gt;
 &lt;a href="/files/document.pdf" download&gt;Download PDF&lt;/a&gt;
 
-<!-- Specify a filename for the downloaded file -->
+&lt;!-- Specify a filename for the downloaded file --&gt;
 &lt;a href="/files/document.pdf" download="my-document"&gt;
     Download with Custom Filename
 &lt;/a&gt;
 
-<!-- Download an image -->
+&lt;!-- Download an image --&gt;
 &lt;a href="/images/photo.jpg" download&gt;
     &lt;img src="/images/photo-thumb.jpg" alt="Download photo"&gt;
 &lt;/a&gt;</code></pre>
-                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="p-3 border rounded">
-                            <div class="d-flex flex-wrap gap-2 mb-3">
-                                <a href="#" class="btn btn-outline-primary" onclick="alert('In a real implementation, this would download a file.'); return false;">Download PDF</a>
-                                <a href="#" class="btn btn-outline-primary" onclick="alert('In a real implementation, this would download a file with a custom name.'); return false;">Download with Custom Filename</a>
-                            </div>
-                            <div class="text-center">
-                                <a href="#" onclick="alert('In a real implementation, this would download the image.'); return false;" class="d-inline-block">
-                                    <img src="https://via.placeholder.com/100" alt="Download photo" class="img-thumbnail">
-                                </a>
-                            </div>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
+                    <div class="p-3 border rounded bg-light">
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <a href="#" class="btn btn-outline-primary" onclick="alert('In a real implementation, this would download a file.'); return false;">Download PDF</a>
+                            <a href="#" class="btn btn-outline-primary" onclick="alert('In a real implementation, this would download a file with a custom name.'); return false;">Download with Custom Filename</a>
+                        </div>
+                        <div class="text-center">
+                            <a href="#" onclick="alert('In a real implementation, this would download the image.'); return false;" class="d-inline-block">
+                                <img src="https://via.placeholder.com/100" alt="Download photo" class="img-thumbnail">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -405,42 +431,45 @@ include 'sidebar.php';
                 <h2 class="h4 mb-4" id="button-links">6. Button-Style Links</h2>
                 <p>You can style links to look like buttons using CSS. Here are some common button styles using Bootstrap classes.</p>
                 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="alert alert-light">
-                            <h6>Example:</h6>
-                            <pre class="mb-0"><code class="language-html">&lt;!-- Basic button --&gt;
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">HTML Code:</h4>
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" data-bs-toggle="tooltip" title="Copy code">
+                            <i class="bi bi-clipboard me-1"></i> Copy
+                        </button>
+                    </div>
+                    <div class="code-snippet mb-4">
+                        <pre><code class="language-html">&lt;!-- Basic button --&gt;
 &lt;a href="#" class="btn btn-primary"&gt;Primary Button&lt;/a&gt;
 
-<!-- Outline button -->
+&lt;!-- Outline button --&gt;
 &lt;a href="#" class="btn btn-outline-secondary"&gt;Secondary Button&lt;/a&gt;
 
-<!-- Large button -->
+&lt;!-- Large button --&gt;
 &lt;a href="#" class="btn btn-success btn-lg"&gt;Large Button&lt;/a&gt;
 
-<!-- Disabled button -->
+&lt;!-- Disabled button --&gt;
 &lt;a href="#" class="btn btn-danger" disabled&gt;Disabled Button&lt;/a&gt;</code></pre>
-                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="p-3 border rounded">
-                            <div class="d-flex flex-wrap gap-2 mb-3">
-                                <a href="#" class="btn btn-primary">Primary Button</a>
-                                <a href="#" class="btn btn-outline-secondary">Secondary Button</a>
-                            </div>
-                            <div class="d-flex flex-wrap gap-2 mb-3">
-                                <a href="#" class="btn btn-success btn-lg">Large Button</a>
-                                <a href="#" class="btn btn-danger" disabled>Disabled Button</a>
-                            </div>
-                            <p class="mb-0">
-                                <a href="#" class="btn btn-info text-white me-2 mb-2">
-                                    <i class="fas fa-info-circle me-1"></i> With Icon
-                                </a>
-                                <a href="#" class="btn btn-warning text-dark me-2 mb-2">
-                                    <i class="fas fa-download me-1"></i> Download
-                                </a>
-                            </p>
+                    
+                    <h4 class="h6 mb-2">Live Example:</h4>
+                    <div class="p-3 border rounded bg-light">
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <a href="#" class="btn btn-primary">Primary Button</a>
+                            <a href="#" class="btn btn-outline-secondary">Secondary Button</a>
                         </div>
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <a href="#" class="btn btn-success btn-lg">Large Button</a>
+                            <a href="#" class="btn btn-danger" disabled>Disabled Button</a>
+                        </div>
+                        <p class="mb-0">
+                            <a href="#" class="btn btn-info text-white me-2 mb-2">
+                                <i class="fas fa-info-circle me-1"></i> With Icon
+                            </a>
+                            <a href="#" class="btn btn-warning text-dark me-2 mb-2">
+                                <i class="fas fa-download me-1"></i> Download
+                            </a>
+                        </p>
                     </div>
                 </div>
                 
@@ -537,7 +566,7 @@ include 'sidebar.php';
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="p-3 border rounded">
+                        <div class="p-3 border rounded bg-light">
                             <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
                                 <div class="container-fluid">
                                     <a class="navbar-brand" href="#">My Website</a>
@@ -592,3 +621,118 @@ include 'sidebar.php';
 </div>
 
 <?php include_file('includes/footer.php'); ?>
+
+
+<style>
+.code-snippet {
+    position: relative;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.code-snippet pre {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+.code-snippet .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 10;
+}
+
+pre code {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+    color: #333;
+    background: #f8f9fa;
+}
+
+/* Syntax highlighting for code */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6a9955;
+}
+
+.token.punctuation {
+    color: #d4d4d4;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #b5cea8;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #ce9178;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #d4d4d4;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #569cd6;
+}
+
+.token.function,
+.token.class-name {
+    color: #dcdcaa;
+}
+</style>
+
+<script>
+// Add copy functionality to all copy buttons
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Add click event for copy buttons
+    document.querySelectorAll('.copy-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const codeBlock = this.closest('.code-snippet').querySelector('code');
+            const code = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                // Change button text temporarily
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="bi bi-check"></i> Copied!';
+                
+                // Reset button text after 2 seconds
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        });
+    });
+});
+</script>

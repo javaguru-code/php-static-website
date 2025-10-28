@@ -15,41 +15,16 @@ $base_url = get_base_url();
 $css_path = $base_url;
 $js_path = $base_url;
 
-// Add Prism.js for code highlighting
+// Add external CSS and JS files
 $page_extra_head = '
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markup-templating.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="' . $base_url . 'tutorials/web-basics/html/css/tutorial-styles.css">
+<link rel="stylesheet" href="' . $base_url . 'tutorials/web-basics/html/css/form-attributes.css">
 <style>
-    .form-demo {
-        background-color: #f8f9fa;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .form-preview {
-        border: 1px solid #dee2e6;
-        border-radius: 0.375rem;
-        padding: 1.5rem;
-        margin-top: 1rem;
-    }
     .attribute-example {
-        margin-bottom: 2.5rem;
-        padding: 1.5rem;
-        background-color: #fff;
-        border-radius: 0.5rem;
-        box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
-    }
-    .attribute-example h3 {
-        margin-top: 0;
-        color: #0d6efd;
-        border-bottom: 2px solid #dee2e6;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .attribute-example .demo {
         margin: 1.5rem 0;
         padding: 1.5rem;
         background-color: #f8f9fa;
