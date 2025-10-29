@@ -199,147 +199,339 @@ include 'sidebar.php';
 
         <!-- Enctype Attribute -->
         <section class="mb-5" id="enctype-attribute">
-            <h2 class="mb-4"><code>enctype</code> Attribute</h2>
+            <h2 class="mb-4">enctype Attribute</h2>
             <p>Specifies how form data should be encoded before sending it to the server.</p>
             
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Default</h5>
-                            <small class="text-muted">application/x-www-form-urlencoded</small>
-                        </div>
-                        <div class="card-body">
-                            <form action="/submit" method="post">
-                                <div class="mb-3">
-                                    <input type="text" name="username" class="form-control" placeholder="Username" required>
-                                </div>
-                                <button type="submit" class="btn btn-outline-primary w-100">Submit</button>
-                            </form>
-                        </div>
-                    </div>
+            <!-- Default enctype -->
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">1. Default (application/x-www-form-urlencoded)</h5>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">File Upload</h5>
-                            <small class="text-muted">multipart/form-data</small>
-                        </div>
-                        <div class="card-body">
-                            <form action="/upload" method="post" enctype="multipart/form-data">
-                                <div class="mb-3">
-                                    <input type="file" name="file" class="form-control" required>
-                                </div>
-                                <button type="submit" class="btn btn-outline-primary w-100">Upload</button>
-                            </form>
-                        </div>
+                <div class="card-body">
+                    <h6>Code:</h6>
+                    <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;
+    &lt;input type="text" name="username" placeholder="Username"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    
+                    <h6 class="mt-3">Output:</h6>
+                    <div class="p-3 bg-light border rounded">
+                        <form action="#" method="post" class="mb-0">
+                            <input type="text" name="username" class="form-control mb-2" placeholder="Username">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
                     </div>
+                    <p class="text-muted mt-2 mb-0">Data is sent as URL-encoded key-value pairs</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Plain Text</h5>
-                            <small class="text-muted">text/plain</small>
-                        </div>
-                        <div class="card-body">
-                            <form action="/submit" method="post" enctype="text/plain">
-                                <div class="mb-3">
-                                    <textarea name="comment" class="form-control" placeholder="Your comment" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-outline-primary w-100">Submit</button>
-                            </form>
-                        </div>
+            </div>
+
+            <!-- File Upload enctype -->
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">2. File Upload (multipart/form-data)</h5>
+                </div>
+                <div class="card-body">
+                    <h6>Code:</h6>
+                    <pre><code class="language-html">&lt;form action="/upload" method="post" enctype="multipart/form-data"&gt;
+    &lt;input type="file" name="file"&gt;
+    &lt;button type="submit"&gt;Upload File&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    
+                    <h6 class="mt-3">Output:</h6>
+                    <div class="p-3 bg-light border rounded">
+                        <form action="#" method="post" enctype="multipart/form-data" class="mb-0">
+                            <div class="mb-2">
+                                <input type="file" class="form-control" name="file">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload File</button>
+                        </form>
                     </div>
+                    <p class="text-muted mt-2 mb-0">Required for file uploads, sends data in multiple parts</p>
                 </div>
+            </div>
+
+            <!-- Plain Text enctype -->
+            <div class="card">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">3. Plain Text (text/plain)</h5>
+                </div>
+                <div class="card-body">
+                    <h6>Code:</h6>
+                    <pre><code class="language-html">&lt;form action="/submit" method="post" enctype="text/plain"&gt;
+    &lt;textarea name="comment" placeholder="Leave a comment"&gt;&lt;/textarea&gt;
+    &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    
+                    <h6 class="mt-3">Output:</h6>
+                    <div class="p-3 bg-light border rounded">
+                        <form action="#" method="post" enctype="text/plain" class="mb-0">
+                            <textarea name="comment" class="form-control mb-2" placeholder="Leave a comment"></textarea>
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
+                    </div>
+                    <p class="text-muted mt-2 mb-0">Sends data as plain text (not URL-encoded)</p>
+                </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+                <h5><i class="fas fa-info-circle me-2"></i> When to use each enctype:</h5>
+                <ul class="mb-0">
+                    <li><strong>application/x-www-form-urlencoded</strong>: Default, good for simple text data</li>
+                    <li><strong>multipart/form-data</strong>: Required for file uploads</li>
+                    <li><strong>text/plain</strong>: Useful for debugging, not recommended for production</li>
+                </ul>
             </div>
         </section>
 
         <!-- Target Attribute -->
         <section class="mb-5" id="target-attribute">
-            <h2 class="mb-4"><code>target</code> Attribute</h2>
-            <p>Specifies where to display the response after form submission.</p>
+            <h2 class="mb-4">target Attribute</h2>
+            <p>Specifies where to display the response after form submission. This attribute determines if the form response loads in the current window, a new tab, or a named iframe.</p>
             
-            <div class="row g-4">
+            <!-- _self Target -->
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">1. Same Tab (_self)</h5>
+                </div>
+                <div class="card-body">
+                    <h6>Code:</h6>
+                    <pre><code class="language-html">&lt;form action="/preview" method="post" target="_self"&gt;
+    &lt;input type="text" name="preview" placeholder="Enter text to preview"&gt;
+    &lt;button type="submit"&gt;Preview&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    
+                    <h6 class="mt-3">Output:</h6>
+                    <div class="p-3 bg-light border rounded">
+                        <form action="#" method="post" target="_self" class="mb-0">
+                            <div class="input-group">
+                                <input type="text" name="preview" class="form-control" placeholder="Enter text to preview">
+                                <button type="submit" class="btn btn-primary">Preview</button>
+                            </div>
+                        </form>
+                    </div>
+                    <p class="text-muted mt-2 mb-0">Loads the response in the same browsing context (default behavior)</p>
+                </div>
+            </div>
+
+            <!-- _blank Target -->
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">2. New Tab/Window (_blank)</h5>
+                </div>
+                <div class="card-body">
+                    <h6>Code:</h6>
+                    <pre><code class="language-html">&lt;form action="/print" method="post" target="_blank" rel="noopener noreferrer"&gt;
+    &lt;button type="submit"&gt;
+        &lt;i class="fas fa-print"&gt;&lt;/i&gt; Print Preview
+    &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    
+                    <h6 class="mt-3">Output:</h6>
+                    <div class="p-3 bg-light border rounded">
+                        <form action="#" method="post" target="_blank" rel="noopener noreferrer" class="mb-0">
+                            <button type="submit" class="btn btn-outline-primary">
+                                <i class="fas fa-print me-2"></i> Print Preview
+                            </button>
+                        </form>
+                    </div>
+                    <p class="text-muted mt-2 mb-0">Opens the response in a new browsing context (tab/window)</p>
+                </div>
+            </div>
+
+            <!-- _parent and _top Targets -->
+            <div class="row">
                 <div class="col-md-6">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-header bg-light">
-                            <h5 class="mb-0">Same Tab (<code>_self</code>)</h5>
+                            <h5 class="mb-0">3. Parent Frame (_parent)</h5>
                         </div>
                         <div class="card-body">
-                            <form action="/preview" method="post" target="_self">
-                                <div class="input-group">
-                                    <input type="text" name="preview" class="form-control" placeholder="Enter text to preview">
-                                    <button type="submit" class="btn btn-primary">Preview</button>
-                                </div>
-                            </form>
+                            <h6>Code:</h6>
+                            <pre><code class="language-html">&lt;form action="/update" target="_parent"&gt;
+    &lt;button type="submit"&gt;Update Parent&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                            <p class="text-muted mt-2 mb-0">Loads in the parent frame (if in a frame)</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-header bg-light">
-                            <h5 class="mb-0">New Tab (<code>_blank</code>)</h5>
+                            <h5 class="mb-0">4. Top Window (_top)</h5>
                         </div>
                         <div class="card-body">
-                            <form action="/print" method="post" target="_blank" rel="noopener noreferrer">
-                                <button type="submit" class="btn btn-outline-primary w-100">
-                                    <i class="fas fa-print me-2"></i> Print Preview
-                                </button>
-                            </form>
+                            <h6>Code:</h6>
+                            <pre><code class="language-html">&lt;form action="/home" target="_top"&gt;
+    &lt;button type="submit"&gt;Go to Home&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                            <p class="text-muted mt-2 mb-0">Loads in the full body of the window</p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+                <h5><i class="fas fa-info-circle me-2"></i> When to use each target:</h5>
+                <ul class="mb-0">
+                    <li><strong>_self</strong>: Default behavior, good for most form submissions</li>
+                    <li><strong>_blank</strong>: For opening responses in new tabs (e.g., print previews, external links)</li>
+                    <li><strong>_parent</strong>: When working with iframes to update the parent frame</li>
+                    <li><strong>_top</strong>: To break out of all frames and load in the full window</li>
+                </ul>
+                <div class="mt-2">
+                    <strong>Security Note:</strong> Always use <code>rel="noopener noreferrer"</code> with <code>target="_blank"</code> to prevent security vulnerabilities.
                 </div>
             </div>
         </section>
 
         <!-- Autocomplete Attribute -->
         <section class="mb-5" id="autocomplete-attribute">
-            <h2 class="mb-4"><code>autocomplete</code> Attribute</h2>
-            <p>Controls whether the browser should provide autofill suggestions for form fields.</p>
+            <h2 class="mb-4">autocomplete Attribute</h2>
+            <p>Controls whether the browser should provide autofill suggestions for form fields. This attribute can be used on both the <code>&lt;form&gt;</code> element and individual form controls.</p>
             
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Autocomplete On</h5>
-                        </div>
-                        <div class="card-body">
-                            <form action="/signup" method="post" autocomplete="on">
-                                <div class="mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
-                            </form>
-                        </div>
+            <!-- Autocomplete On Example -->
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">1. Autocomplete On</h5>
+                </div>
+                <div class="card-body">
+                    <h6>Code:</h6>
+                    <pre><code class="language-html">&lt;form action="/signup" method="post" autocomplete="on"&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;Full Name&lt;/label&gt;
+        &lt;input type="text" name="fullname" class="form-control" autocomplete="name"&gt;
+    &lt;/div&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;Email&lt;/label&gt;
+        &lt;input type="email" name="email" class="form-control" autocomplete="email"&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Sign Up&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    
+                    <h6 class="mt-3">Output:</h6>
+                    <div class="p-3 bg-light border rounded">
+                        <form action="#" method="post" autocomplete="on" class="mb-0">
+                            <div class="mb-3">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" name="fullname" class="form-control" autocomplete="name" placeholder="John Doe">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" autocomplete="email" placeholder="john@example.com">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </form>
+                    </div>
+                    <p class="text-muted mt-2 mb-0">Enables browser autofill for all form fields</p>
+                </div>
+            </div>
+
+            <!-- Autocomplete Off Example -->
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">2. Autocomplete Off</h5>
+                </div>
+                <div class="card-body">
+                    <h6>Code:</h6>
+                    <pre><code class="language-html">&lt;form action="/login" method="post" autocomplete="off"&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;Username&lt;/label&gt;
+        &lt;input type="text" name="username" class="form-control" autocomplete="username"&gt;
+    &lt;/div&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;Password&lt;/label&gt;
+        &lt;input type="password" name="password" class="form-control" 
+               autocomplete="new-password"&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Login&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    
+                    <h6 class="mt-3">Output:</h6>
+                    <div class="p-3 bg-light border rounded">
+                        <form action="#" method="post" autocomplete="off" class="mb-0">
+                            <div class="mb-3">
+                                <label class="form-label">Username</label>
+                                <input type="text" name="username" class="form-control" autocomplete="username" placeholder="Enter username">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" name="password" class="form-control" 
+                                       autocomplete="new-password" placeholder="Enter password">
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary">Login</button>
+                        </form>
+                    </div>
+                    <p class="text-muted mt-2 mb-0">Disables autofill for the entire form</p>
+                </div>
+            </div>
+
+            <!-- Common Autocomplete Values -->
+            <div class="card">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">3. Common Autocomplete Values</h5>
+                </div>
+                <div class="card-body">
+                    <h6>Common Values:</h6>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>name</code></td>
+                                    <td>Full name</td>
+                                    <td><code>autocomplete="name"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>email</code></td>
+                                    <td>Email address</td>
+                                    <td><code>autocomplete="email"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>username</code></td>
+                                    <td>Username or login ID</td>
+                                    <td><code>autocomplete="username"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>new-password</code></td>
+                                    <td>New password (avoids saving)</td>
+                                    <td><code>autocomplete="new-password"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>current-password</code></td>
+                                    <td>Current password</td>
+                                    <td><code>autocomplete="current-password"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tel</code></td>
+                                    <td>Telephone number</td>
+                                    <td><code>autocomplete="tel"</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Autocomplete Off</h5>
-                        </div>
-                        <div class="card-body">
-                            <form action="/login" method="post" autocomplete="off">
-                                <div class="mb-3">
-                                    <label class="form-label">Username</label>
-                                    <input type="text" name="username" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" name="password" class="form-control" autocomplete="new-password" required>
-                                </div>
-                                <button type="submit" class="btn btn-outline-primary w-100">Login</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+                <h5><i class="fas fa-info-circle me-2"></i> Best Practices:</h5>
+                <ul class="mb-0">
+                    <li>Use <code>autocomplete="off"</code> sparingly - only when truly necessary</li>
+                    <li>For sensitive forms, use specific values like <code>autocomplete="new-password"</code> instead of disabling autocomplete entirely</li>
+                    <li>Always provide proper <code>name</code> and <code>id</code> attributes for better accessibility</li>
+                    <li>Test autocomplete behavior across different browsers</li>
+                </ul>
             </div>
         </section>
 
         <!-- Novalidate Attribute -->
         <section class="mb-5" id="novalidate-attribute">
-            <h2 class="mb-4"><code>novalidate</code> Attribute</h2>
+            <h2 class="mb-4">novalidate Attribute</h2>
             <p>Prevents the browser's default form validation, allowing for custom validation.</p>
             
             <div class="card">

@@ -177,6 +177,10 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
 <div class="sidebar-section mb-4">
   <h6 class="sidebar-section-title">Advanced HTML</h6>
   <nav class="nav flex-column">
+    <a class="nav-link <?= ($current_page == 'html-head') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-semantic">
+      <i class="bi bi-file-earmark-text"></i> semantic HTML
+    </a>
+    <a class="nav-link <?= ($current_page == 'html-layout') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-layout">
     <a class="nav-link <?= ($current_page == 'html-head') ? 'active' : '' ?>" href="<?= $base_url ?>tutorials/web-basics/html/html-head">
       <i class="bi bi-file-earmark-text"></i> Head Element
     </a>

@@ -1,0 +1,222 @@
+/* audio-video.css */
+/* Base styles for media elements */
+.media-preview {
+    max-width: 100%;
+    height: auto;
+    background-color: #000;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Video container for responsive design */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.video-container iframe,
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Specific styles for YouTube embeds */
+.youtube-container {
+    background: #000;
+}
+
+.youtube-container iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ensure the example containers have proper spacing */
+.example-card {
+    margin-bottom: 2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.example-card .card-header {
+    background-color: #f8f9fa;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 600;
+}
+
+.example-card .card-body {
+    padding: 1.5rem;
+}
+
+/* Audio player styling */
+audio.media-preview {
+    width: 100%;
+    max-width: 500px;
+    margin: 1rem 0;
+    border-radius: 30px;
+}
+
+/* Custom controls */
+.media-controls {
+    display: flex;
+    gap: 10px;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+/* Media sections */
+.media-section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.media-section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Code examples */
+.code-example {
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0 4px 4px 0;
+    overflow-x: auto;
+}
+
+/* Attribute tables */
+.attribute-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+}
+
+.attribute-table th,
+.attribute-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.attribute-table thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+
+.attribute-table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-container {
+        margin: 0 -15px;
+        border-radius: 0;
+    }
+    
+    .media-section {
+        padding: 1rem;
+        margin-left: -15px;
+        margin-right: -15px;
+        border-radius: 0;
+    }
+    
+    .attribute-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Card styling for examples */
+.example-card {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background: #fff;
+}
+
+.example-card .card-header {
+    background-color: #f8f9fa;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    font-weight: 600;
+}
+
+.example-card .card-body {
+    padding: 1.25rem;
+}
+
+/* Prism overrides */
+:not(pre) > code[class*="language-"], 
+pre[class*="language-"] {
+    background: #2d2d2d;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+/* Button styles */
+.btn-media {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-play {
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+
+.btn-play:hover {
+    background-color: #218838;
+}
+
+/* Accessibility focus styles */
+.media-preview:focus,
+button:focus {
+    outline: 3px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Loading state */
+.media-loading {
+    position: relative;
+    min-height: 100px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+}
+
+.media-loading::after {
+    content: "Loading...";
+    font-style: italic;
+}

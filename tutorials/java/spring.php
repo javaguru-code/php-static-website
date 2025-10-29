@@ -121,7 +121,7 @@ console.log('Welcome to Spring Framework tutorial!');</code></pre>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 <script src="../js/theme-toggle.js"></script>
 <script src="../js/navigation.js"></script>
-<script src="../js/sidebar.js"></script>
+<script src="../js/mobile-sidebar.js"></script>
 
 
 <?php include '../../includes/footer.php'; ?>

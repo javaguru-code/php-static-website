@@ -8,32 +8,10 @@
     'use strict';
     
     // Main initialization function
-    function init() {
+    function initializeMobileSidebar() {
         console.group('🚀 Mobile Sidebar Initialization');
         console.log('DOM fully loaded, initializing mobile sidebar...');
         
-        const sidebarOffcanvas = document.getElementById('sidebarOffcanvas');
-        const mobileSidebarContent = document.getElementById('mobileSidebarContent');
-        
-        console.log('Looking for sidebar elements...');
-        console.log('- sidebarOffcanvas:', sidebarOffcanvas ? 'Found' : 'Not found');
-        console.log('- mobileSidebarContent:', mobileSidebarContent ? 'Found' : 'Not found');
-        
-        if (!sidebarOffcanvas || !mobileSidebarContent) {
-            console.warn('Required elements not found, will retry...');
-            // If elements not found yet, try again after a short delay
-            setTimeout(() => {
-                console.log('Retrying initialization...');
-                init();
-            }, 100);
-            return;
-        }
-        
-        console.log('Sidebar elements found, loading content...');
-        loadSidebarContent();
-        
-        // Function to load sidebar content
-        function loadSidebarContent() {
         const sidebarOffcanvas = document.getElementById('sidebarOffcanvas');
         const mobileSidebarContent = document.getElementById('mobileSidebarContent');
         
@@ -92,103 +70,100 @@
                 },
                 cache: 'no-cache' // Prevent caching issues
             })
-                .then(response => {
-                    console.log(`[${requestId}] Response status:`, response.status, response.statusText);
-                    console.log(`[${requestId}] Response URL:`, response.url);
-                    console.log(`[${requestId}] Response headers:`, [...response.headers.entries()]);
-                    
-                    if (!response.ok) {
-                        console.warn(`[${requestId}] Sidebar not found at:`, sidebarPath);
-                        // If the specific sidebar isn't found, fall back to the default
-                        if (sidebarPath !== 'sidebar.php') {
-                            console.log(`[${requestId}] Trying fallback to default sidebar.php`);
-                            return fetch('sidebar.php', {
-                                headers: { 'X-Requested-With': 'XMLHttpRequest', 'X-Request-ID': requestId + '-fallback' }
-                            });
-                        }
-                        throw new Error(`[${requestId}] Sidebar not found and no fallback available`);
+            .then(response => {
+                console.log(`[${requestId}] Response status:`, response.status, response.statusText);
+                
+                if (!response.ok) {
+                    console.warn(`[${requestId}] Sidebar not found at:`, sidebarPath);
+                    // If the specific sidebar isn't found, fall back to the default
+                    if (sidebarPath !== 'sidebar.php') {
+                        console.log(`[${requestId}] Trying fallback to default sidebar.php`);
+                        return fetch('sidebar.php', {
+                            headers: { 'X-Requested-With': 'XMLHttpRequest', 'X-Request-ID': requestId + '-fallback' }
+                        });
                     }
-                    return response;
-                })
-                .then(response => {
-                    if (!response) throw new Error('No response received');
-                    return response.text().then(html => {
-                        console.log(`[${requestId}] Received HTML (${html.length} chars)`);
-                        console.log(`[${requestId}] First 200 chars:`, html.substring(0, 200));
-                        return html;
-                    });
-                })
-                .then(html => {
-                    console.log(`[${requestId}] Processing HTML content`);
-                    
-                    // Create a temporary container to parse the HTML
-                    const temp = document.createElement('div');
-                    temp.innerHTML = html;
-                    
-                    console.log(`[${requestId}] Temporary container created`);
-                    
-                    // Find the sidebar content - look for the sidebar-nav or sidebar-content
-                    let sidebarContent = temp.querySelector('.sidebar-nav, .sidebar-content, .sidebar');
-                    console.log(`[${requestId}] Found sidebar content:`, !!sidebarContent);
-                    
-                    if (!sidebarContent) {
-                        console.log(`[${requestId}] No sidebar content found with standard selectors, trying fallback`);
-                        // Try to find any element that might contain the sidebar
-                        const possibleSidebars = temp.querySelectorAll('div, aside, nav');
-                        console.log(`[${requestId}] Found ${possibleSidebars.length} potential sidebar elements`);
-                        
-                        // Look for an element with sidebar-like structure
-                        for (const el of possibleSidebars) {
-                            if (el.querySelector('a, .nav-link')) {
-                                sidebarContent = el;
-                                console.log(`[${requestId}] Found potential sidebar content by link presence`);
-                                break;
-                            }
-                        }
-                        
-                        // If we still can't find the sidebar content, use the body
-                        if (!sidebarContent) {
-                            const body = temp.querySelector('body');
-                            if (body && body.firstElementChild) {
-                                console.log(`[${requestId}] Using first child of body as fallback`);
-                                sidebarContent = body.firstElementChild;
-                            } else {
-                                console.log(`[${requestId}] Using entire temp container as fallback`);
-                                sidebarContent = temp;
-                            }
-                        }
-                    }
-                    
-                    console.log(`[${requestId}] Updating mobile sidebar content`);
-                    
-                    // Make a clone to avoid any potential issues with the original
-                    const sidebarClone = sidebarContent.cloneNode(true);
-                    
-                    // Update the mobile sidebar content
-                    mobileSidebarContent.innerHTML = '';
-                    mobileSidebarContent.appendChild(sidebarClone);
-                    
-                    console.log(`[${requestId}] Content updated, initializing dropdowns`);
-                    
-                    // Initialize dropdown toggles
-                    initMobileDropdowns();
-                    
-                    console.log(`[${requestId}] Initialization complete`);
-                })
-                .catch(error => {
-                    console.error(`[${requestId}] Error loading sidebar:`, error);
-                    mobileSidebarContent.innerHTML = `
-                        <div class="p-3">
-                            <div class="alert alert-warning">
-                                <h5>Error loading menu</h5>
-                                <p>${error.message || 'Unknown error'}</p>
-                                <p class="small text-muted">Request ID: ${requestId}</p>
-                            </div>
-                        </div>`;
-                })
-                .finally(() => {
-                    console.groupEnd();
+                    throw new Error(`[${requestId}] Sidebar not found and no fallback available`);
+                }
+                return response;
+            })
+            .then(response => {
+                if (!response) throw new Error('No response received');
+                return response.text().then(html => {
+                    console.log(`[${requestId}] Received HTML (${html.length} chars)`);
+                    return html;
                 });
+            })
+            .then(html => {
+                console.log(`[${requestId}] Processing HTML content`);
+                
+                // Create a temporary container to parse the HTML
+                const temp = document.createElement('div');
+                temp.innerHTML = html;
+                
+                console.log(`[${requestId}] Temporary container created`);
+                
+                // Find the sidebar content - look for the sidebar-nav or sidebar-content
+                let sidebarContent = temp.querySelector('.sidebar-nav, .sidebar-content, .sidebar');
+                console.log(`[${requestId}] Found sidebar content:`, !!sidebarContent);
+                
+                if (!sidebarContent) {
+                    console.log(`[${requestId}] No sidebar content found with standard selectors, trying fallback`);
+                    // Try to find any element that might contain the sidebar
+                    const possibleSidebars = temp.querySelectorAll('div, aside, nav');
+                    console.log(`[${requestId}] Found ${possibleSidebars.length} potential sidebar elements`);
+                    
+                    // Look for an element with sidebar-like structure
+                    for (const el of possibleSidebars) {
+                        if (el.querySelector('a, .nav-link')) {
+                            sidebarContent = el;
+                            console.log(`[${requestId}] Found potential sidebar content by link presence`);
+                            break;
+                        }
+                    }
+                    
+                    // If we still can't find the sidebar content, use the body
+                    if (!sidebarContent) {
+                        const body = temp.querySelector('body');
+                        if (body && body.firstElementChild) {
+                            console.log(`[${requestId}] Using first child of body as fallback`);
+                            sidebarContent = body.firstElementChild;
+                        } else {
+                            console.log(`[${requestId}] Using entire temp container as fallback`);
+                            sidebarContent = temp;
+                        }
+                    }
+                }
+                
+                console.log(`[${requestId}] Updating mobile sidebar content`);
+                
+                // Make a clone to avoid any potential issues with the original
+                const sidebarClone = sidebarContent.cloneNode(true);
+                
+                // Update the mobile sidebar content
+                mobileSidebarContent.innerHTML = '';
+                mobileSidebarContent.appendChild(sidebarClone);
+                
+                console.log(`[${requestId}] Content updated, initializing dropdowns`);
+                
+                // Initialize dropdown toggles
+                initMobileDropdowns();
+                
+                console.log(`[${requestId}] Initialization complete`);
+            })
+            .catch(error => {
+                console.error(`[${requestId}] Error loading sidebar:`, error);
+                mobileSidebarContent.innerHTML = `
+                    <div class="p-3">
+                        <div class="alert alert-warning">
+                            <h5>Error loading menu</h5>
+                            <p>${error.message || 'Unknown error'}</p>
+                            <p class="small text-muted">Request ID: ${requestId}</p>
+                        </div>
+                    </div>`;
+            })
+            .finally(() => {
+                console.groupEnd();
+            });
         }
         
         // Initialize dropdown toggles in the mobile sidebar
@@ -205,7 +180,6 @@
                     e.preventDefault();
                     e.stopPropagation();
                     
-                    const parentItem = this.closest('.dropdown');
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     const dropdownMenu = this.nextElementSibling;
                     
@@ -244,13 +218,17 @@
         sidebarOffcanvas.addEventListener('show.bs.offcanvas', function() {
             loadSidebarContent();
         });
-        
+
         // Initial load if the offcanvas is already open
         if (sidebarOffcanvas.classList.contains('show')) {
             loadSidebarContent();
         }
+        
+        console.groupEnd();
     }
-    
-    // Initialize the mobile sidebar
-    initializeMobileSidebar();
-});
+
+    // Initialize the mobile sidebar when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeMobileSidebar();
+    });
+})();
